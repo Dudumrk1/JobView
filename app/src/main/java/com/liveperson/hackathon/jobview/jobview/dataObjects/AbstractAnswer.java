@@ -9,7 +9,31 @@ import java.util.UUID;
 
 public abstract class AbstractAnswer {
 
-    private UUID answerId;
-    private UUID answerVideoId;
-    private String answerText;
+    protected UUID answerId;
+    protected UUID answerVideoId;
+    protected String answerText;
+
+    public UUID getAnswerId() {
+        return answerId;
+    }
+
+    public void setAnswerId(UUID answerId) {
+        this.answerId = answerId;
+    }
+
+    public UUID getAnswerVideoId() {
+        return answerVideoId;
+    }
+
+    public void setAnswerVideoId(UUID answerVideoId) {
+        this.answerVideoId = answerVideoId;
+    }
+
+    public String getAnswerText() {
+        return answerText;
+    }
+
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
+    }
 }

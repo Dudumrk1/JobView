@@ -11,4 +11,31 @@ public class ReviewMetricScore {
     private int reviewMetricScore;
     private String reviewMetricText;
 
+    public ReviewMetricScore() {
+        metricId = UUID.randomUUID();
+    }
+
+    public UUID getMetricId() {
+        return metricId;
+    }
+
+    public void setMetricId(UUID metricId) {
+        this.metricId = metricId;
+    }
+
+    public int getReviewMetricScore() {
+        return reviewMetricScore;
+    }
+
+    public void setReviewMetricScore(int reviewMetricScore) {
+        this.reviewMetricScore = reviewMetricScore;
+    }
+
+    public String getReviewMetricText() {
+        return reviewMetricText;
+    }
+
+    public void setReviewMetricText(String reviewMetricText) {
+        this.reviewMetricText = reviewMetricText;
+    }
 }
