@@ -16,6 +16,10 @@ public class OccupationalDomain {
         domainId = UUID.randomUUID();
     }
 
+    public OccupationalDomain(String domainName) {
+        this.domainName = domainName;
+    }
+
     public UUID getDomainId() {
         return domainId;
     }

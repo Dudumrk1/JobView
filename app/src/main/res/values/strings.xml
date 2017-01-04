@@ -15,4 +15,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_hadracha">Hadracha</string>
     <string name="title_activity_lior">Lior</string>
+
+
+    <string-array name="OccupationalDomain">
+        <item>תוכנה</item>
+        <item>ען״ד</item>
+        <item>רפואה</item>
+        <item>פיננסים</item>
+    </string-array>
 </resources>

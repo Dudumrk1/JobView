@@ -43,13 +43,12 @@ public class SplashActivity extends AppCompatActivity {
                             .createSignInIntentBuilder()
                             .build(),
                     RC_SIGN_IN);
-            finish();
         } else {
 
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent i = new Intent(SplashActivity.this, BaseDrawerActivity.class);
+                    Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
                     startActivity(i);
 
                     // close this activity
@@ -73,7 +72,9 @@ public class SplashActivity extends AppCompatActivity {
                 if (firstLogin){
                     startActivity(new Intent(this, PersonalDetailsActivity.class));
                     finish();
-
+                }else {
+                    Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
+                    startActivity(i);
                 }
                 return;
             }
