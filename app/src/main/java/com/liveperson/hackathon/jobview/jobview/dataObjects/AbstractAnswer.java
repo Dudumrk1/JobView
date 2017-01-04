@@ -9,23 +9,23 @@ import java.util.UUID;
 
 public abstract class AbstractAnswer {
 
-    protected UUID answerId;
-    protected UUID answerVideoId;
+    protected String answerId;
+    protected String answerVideoId;
     protected String answerText;
 
-    public UUID getAnswerId() {
+    public String  getAnswerId() {
         return answerId;
     }
 
-    public void setAnswerId(UUID answerId) {
+    public void setAnswerId(String answerId) {
         this.answerId = answerId;
     }
 
-    public UUID getAnswerVideoId() {
+    public String  getAnswerVideoId() {
         return answerVideoId;
     }
 
-    public void setAnswerVideoId(UUID answerVideoId) {
+    public void setAnswerVideoId(String answerVideoId) {
         this.answerVideoId = answerVideoId;
     }
 
