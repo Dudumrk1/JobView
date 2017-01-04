@@ -18,6 +18,10 @@ public class Question {
         questionId = UUID.randomUUID().toString();
     }
 
+    public Question(String questionText, String positiveSystemAnswer, String negativeSystemAnswer, List<String> userAnswerIdsList){
+        questionId = UUID.randomUUID().toString();
+    }
+
     public String getQuestionId() {
         return questionId;
     }
