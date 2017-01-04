@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.liveperson.hackathon.jobview.jobview">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,6 +38,22 @@
         <activity
             android:name=".ui.GuidanceActivity"
             android:label="@string/title_activity_lior"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.AudioRecordingActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.VideoRecordingActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.RecordingButtonsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.VideoViewActivity"
+            android:label="@string/title_activity_video_view"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

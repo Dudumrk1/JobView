@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent i = new Intent(SplashActivity.this, BaseDrawerActivity.class);
+                    Intent i = new Intent(SplashActivity.this, RecordingButtonsActivity.class);
                     startActivity(i);
 
                     // close this activity
