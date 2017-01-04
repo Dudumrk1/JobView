@@ -1,7 +1,6 @@
 package com.liveperson.hackathon.jobview.jobview.dataObjects;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by liorr on 1/4/17.
@@ -9,27 +8,27 @@ import java.util.UUID;
 
 
 public class User {
-    private String  userId;
+    private String mUserId;
     private String mName;
     private String mEmail;
-    private OccupationalDomain mOccupationalDomainsList;
+    private OccupationalDomain mOccupationalDomains;
     private List<String> mAnsweredQuestions;
 
     public User (){
 
     }
-    public User(String name, String email, OccupationalDomain occupationalDomain) {
-        userId = UUID.randomUUID().toString();
+    public User(String userId, String name, String email) {
+        mUserId = userId;
         mName = name;
         mEmail = email;
     }
 
     public String getUserId() {
-        return userId;
+        return mUserId;
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.mUserId = userId;
     }
 
     public String getmName() {
@@ -48,12 +47,12 @@ public class User {
         mEmail = email;
     }
 
-    public OccupationalDomain getOccupationalDomainsList() {
-        return mOccupationalDomainsList;
+    public OccupationalDomain getOccupationalDomains() {
+        return mOccupationalDomains;
     }
 
-    public void setOccupationalDomainsList(OccupationalDomain occupationalDomainsList) {
-        mOccupationalDomainsList = occupationalDomainsList;
+    public void setOccupationalDomains(OccupationalDomain occupationalDomainsList) {
+        mOccupationalDomains = occupationalDomainsList;
     }
 
     public List<String > getAnsweredQuestions() {
@@ -62,5 +61,9 @@ public class User {
 
     public void setAnsweredQuestions(List<String > answeredQuestions) {
         mAnsweredQuestions = answeredQuestions;
+    }
+
+    public void setAnsweredQuestions(String answeredQuestions) {
+        mAnsweredQuestions.add(answeredQuestions);
     }
 }

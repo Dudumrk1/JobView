@@ -5,6 +5,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +20,8 @@ public  class SessionManager {
     private static SessionManager instance = new SessionManager();
     private static final String SCHEMA_NAME = "jobView";
     private static final String USERS_TABLE_NAME = "users";
+
+    private User mUser;
 
 
     FirebaseDatabase database;
@@ -35,12 +38,13 @@ public  class SessionManager {
     }
 
     public void updateUser (User user){
+        mUser = user;
         database.getReference(SCHEMA_NAME).child(USERS_TABLE_NAME).child(user.getUserId()).setValue(user);
 
     }
 
     // This getter method is void since the onDataChange is async method
-    public void getUser (String userId){
+    public void getUserDB (String userId){
 
         database.getReference(SCHEMA_NAME).child(USERS_TABLE_NAME).child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -66,6 +70,20 @@ public  class SessionManager {
 
             }
         });
+    }
+
+
+    public User getUser() {
+        return mUser;
+    }
+
+    public void setUserDomain(String domain){
+        mUser.setOccupationalDomains(new OccupationalDomain(domain));
+        //TODO - add method to fetch qId + DB update
+    }
+
+    public void setAnsweredId(String id){
+        mUser.setAnsweredQuestions(id);
     }
 
 
