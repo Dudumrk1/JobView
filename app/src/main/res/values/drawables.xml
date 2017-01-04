@@ -5,4 +5,25 @@
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
+
+    <integer-array name="guidanceImagesArray">
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+    </integer-array>
 </resources>

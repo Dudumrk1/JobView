@@ -47,10 +47,7 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
-
-
 
     @Override
     public void onBackPressed() {

@@ -43,7 +43,6 @@ public class SplashActivity extends AppCompatActivity {
                             .createSignInIntentBuilder()
                             .build(),
                     RC_SIGN_IN);
-            finish();
         } else {
 
             new Handler().postDelayed(new Runnable() {
@@ -73,7 +72,9 @@ public class SplashActivity extends AppCompatActivity {
                 if (firstLogin){
                     startActivity(new Intent(this, PersonalDetailsActivity.class));
                     finish();
-
+                }else {
+                    Intent i = new Intent(SplashActivity.this, BaseDrawerActivity.class);
+                    startActivity(i);
                 }
                 return;
             }
