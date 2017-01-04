@@ -1,7 +1,10 @@
 package com.liveperson.hackathon.jobview.jobview.ui;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.liveperson.hackathon.jobview.jobview.R;
 
@@ -11,5 +14,14 @@ public class PersonalDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_detailes);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.next);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(PersonalDetailsActivity.this, DashboardActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
