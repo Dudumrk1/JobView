@@ -8,62 +8,53 @@ import java.util.UUID;
  */
 
 public class User {
-    private UUID userId;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private List<OccupationalDomain> occupationalDomainsList;
-    private List<UUID> answeredQuestions;
+    private String  userId;
+    private String mName;
+    private String mEmail;
+    private OccupationalDomain mOccupationalDomainsList;
+    private List<String> mAnsweredQuestions;
 
-    public User() {
-        userId = UUID.randomUUID();
+    public User(String name, String email, OccupationalDomain occupationalDomain) {
+        userId = UUID.randomUUID().toString();
     }
 
-    public UUID getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(UUID userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return mName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        mName = name;
     }
 
     public String getEmail() {
-        return email;
+        return mEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        mEmail = email;
     }
 
-    public List<OccupationalDomain> getOccupationalDomainsList() {
-        return occupationalDomainsList;
+    public OccupationalDomain getOccupationalDomainsList() {
+        return mOccupationalDomainsList;
     }
 
-    public void setOccupationalDomainsList(List<OccupationalDomain> occupationalDomainsList) {
-        this.occupationalDomainsList = occupationalDomainsList;
+    public void setOccupationalDomainsList(OccupationalDomain occupationalDomainsList) {
+        mOccupationalDomainsList = occupationalDomainsList;
     }
 
-    public List<UUID> getAnsweredQuestions() {
-        return answeredQuestions;
+    public List<String > getAnsweredQuestions() {
+        return mAnsweredQuestions;
     }
 
-    public void setAnsweredQuestions(List<UUID> answeredQuestions) {
-        this.answeredQuestions = answeredQuestions;
+    public void setAnsweredQuestions(List<String > answeredQuestions) {
+        mAnsweredQuestions = answeredQuestions;
     }
 }

@@ -8,10 +8,10 @@ import java.util.UUID;
  */
 
 public class UserAnswer extends AbstractAnswer {
-    private List<UUID> answerReviewsIds;
+    private List<String > answerReviewsIds;
 
-    public UserAnswer(List<UUID> answerReviewsIds) {
-        answerId = UUID.randomUUID();
+    public UserAnswer(List<String > answerReviewsIds) {
+        answerId = UUID.randomUUID().toString();
         this.answerReviewsIds = answerReviewsIds;
     }
 }

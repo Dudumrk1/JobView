@@ -9,6 +9,6 @@ import java.util.UUID;
 public class SystemAnswer extends AbstractAnswer {
 
     public SystemAnswer() {
-        answerId = UUID.randomUUID();
+        answerId = UUID.randomUUID().toString();
     }
 }
