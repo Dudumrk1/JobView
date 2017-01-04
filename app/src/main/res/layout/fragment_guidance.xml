@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_guidance"
     android:layout_width="match_parent"
@@ -12,14 +13,85 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
-        <TextView style="?android:textAppearanceMedium"
-            android:padding="16dp"
-            android:lineSpacingMultiplier="1.2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/liorId"
-            android:text="Lior Resisi" />
+
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="100px"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/guidanceLeftArrow"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                app:srcCompat="@drawable/left_arrow_active" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="233dp"
+            android:layout_height="match_parent"
+            android:elevation="14dp"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="0.98"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/guidanceText"
+                style="?android:textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="16dp"
+                android:text="Lior Resisi"
+                android:textSize="14sp"
+                android:textStyle="normal|bold"
+                android:weightSum="3"
+                android:layout_weight="0.47"
+                android:textDirection="rtl"
+                android:textAlignment="center"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/guidanceImage"
+                android:layout_width="204dp"
+                android:layout_height="309dp"
+                android:adjustViewBounds="false"
+                android:foregroundGravity="center"
+                android:scaleType="fitCenter"
+                android:weightSum="2"
+                app:srcCompat="@drawable/job_view_logo" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="100px"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/guidanceRightArrow"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                app:srcCompat="@drawable/right_arrow_active" />
+        </LinearLayout>
+    </LinearLayout>
+
 </RelativeLayout>

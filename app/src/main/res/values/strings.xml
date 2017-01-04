@@ -10,10 +10,44 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_guidance">GuidanceActivity</string>
+    <string name="title_activity_training">TrainingActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_hadracha">Hadracha</string>
-    <string name="title_activity_lior">Lior</string>
-    <string name="title_activity_video_view">VideoViewActivity</string>
+    <string-array name="OccupationalDomain">
+        <item>תוכנה</item>
+        <item>ען״ד</item>
+        <item>רפואה</item>
+        <item>פיננסים</item>
+    </string-array>
+
+    <string-array name="guidanceStringsArray">
+        <item>רשום את כתובת הארגון, התאריך והשעה של הראיון ביומן באופן מסודר</item>
+        <item>התכונן להצגה עצמית ממוקדת, תמציתית ועניינית למשרה שעליה אתה מתמודד</item>
+        <item>הגע תמיד לפחות 15 דקות לפני הראיון, כך גם תוכל להתרשם מהמקום, להתרגל, להתרשם...</item>
+        <item>זכור את שם המראיין</item>
+        <item>הבא עימך עותק נוסף של קורות החיים שלך</item>
+        <item>היה מודע לתקשורת הלא מילולית (אל תשחק בעטים, טבעות וכולי)</item>
+        <item>שמור על איזון והובלת הראיון בידי המראיין, התייחס לשאלות ותן למראיין לסיים את דבריו - היה תמציתי וספציפי בתשובותייך</item>
+        <item>אם אתה לא מבין את השאלה, שאל על כך</item>
+        <item>הדגש את ההיבטים החיוביים בעברך התעסוקתי</item>
+        <item>רק במידה ומראיין מעלה את נושא השכר ותנאי העסקה – התייחס לכך</item>
+        <item>התכונן מראש – מה הן ציפיות השכר שלך. (לא נמוך מדי ולא גבוה מדי, ביחס לשכר הממוצע בשוק, בהתאם לתפקיד)</item>
+        <item>הדגש מה ביכולתך לעשות ולתרום</item>
+        <item>היה אותנטי, עקבי וכנה בתשובותייך</item>
+        <item>שמור על קשר עין</item>
+        <item>הימנע מוויכוחים</item>
+        <item>דבר בשפה תקנית, מקובלת ומכובדת. הימנע משימוש בסלנג</item>
+        <item>הכן מראש כמה שאלות</item>
+        <item>חשוב על דברי הסיום שלך. הם יחתמו את הראיון ויותירו רושם רב אצל המראיין</item>
+    </string-array>
+    <string-array name="domainQuestionsHR">
+        <item>ספר/י לי על עצמך</item>
+        <item>מה היה תפקידך האחרון ?</item>
+        <item>מה קרה כשמצאת עצמך ללא עבודה ?</item>
+        <item>תאר/י יום עבודה טיפוסי במקום העבודה האחרון שלך</item>
+        <item>כיצד היה מתאר אותך מישהו שמכיר אותך זמן רב ? באילו תארים היה משתמש ?</item>
+        <item>מה היו ההישגים הכי משמעותיים שלך במקומות העבודה האחרונים ?</item>
+        <item>תני דוגמה לאדם שאתה מעריך במיוחד, אילו תכונות אתה מעריך או מוקיר בו ?</item>
+    </string-array>
+
+
 </resources>

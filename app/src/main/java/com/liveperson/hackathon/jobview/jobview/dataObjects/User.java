@@ -1,53 +1,58 @@
 package com.liveperson.hackathon.jobview.jobview.dataObjects;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by liorr on 1/4/17.
  */
 
+
 public class User {
-    private String  userId;
+    private String mUserId;
     private String mName;
     private String mEmail;
-    private OccupationalDomain mOccupationalDomainsList;
+    private OccupationalDomain mOccupationalDomains;
     private List<String> mAnsweredQuestions;
 
-    public User(String name, String email, OccupationalDomain occupationalDomain) {
-        userId = UUID.randomUUID().toString();
-    }
+    public User (){
 
-    public String getUserId() {
-        return userId;
     }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getName() {
-        return mName;
-    }
-
-    public void setName(String name) {
+    public User(String userId, String name, String email) {
+        mUserId = userId;
         mName = name;
-    }
-
-    public String getEmail() {
-        return mEmail;
-    }
-
-    public void setEmail(String email) {
         mEmail = email;
     }
 
-    public OccupationalDomain getOccupationalDomainsList() {
-        return mOccupationalDomainsList;
+    public String getUserId() {
+        return mUserId;
     }
 
-    public void setOccupationalDomainsList(OccupationalDomain occupationalDomainsList) {
-        mOccupationalDomainsList = occupationalDomainsList;
+    public void setUserId(String userId) {
+        this.mUserId = userId;
+    }
+
+    public String getmName() {
+        return mName;
+    }
+
+    public void setmName(String name) {
+        mName = name;
+    }
+
+    public String getmEmail() {
+        return mEmail;
+    }
+
+    public void setmEmail(String email) {
+        mEmail = email;
+    }
+
+    public OccupationalDomain getOccupationalDomains() {
+        return mOccupationalDomains;
+    }
+
+    public void setOccupationalDomains(OccupationalDomain occupationalDomainsList) {
+        mOccupationalDomains = occupationalDomainsList;
     }
 
     public List<String > getAnsweredQuestions() {
@@ -56,5 +61,9 @@ public class User {
 
     public void setAnsweredQuestions(List<String > answeredQuestions) {
         mAnsweredQuestions = answeredQuestions;
+    }
+
+    public void setAnsweredQuestions(String answeredQuestions) {
+        mAnsweredQuestions.add(answeredQuestions);
     }
 }

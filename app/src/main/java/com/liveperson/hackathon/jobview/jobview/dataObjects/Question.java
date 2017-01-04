@@ -8,21 +8,28 @@ import java.util.UUID;
  */
 
 public class Question {
-    private UUID questionId;
+    private String questionId;
     private String questionText;
-    private UUID positiveSystemAnswer;
-    private UUID negativeSystemAnswer;
-    private List<UUID> userAnswerIdsList;
+    // Id of positive answer
+    private String positiveSystemAnswerId;
+    // Id of negative answer
+    private String negativeSystemAnswerId;
+    //List of user answer ids
+    private List<String> userAnswerIdsList;
 
     public Question() {
-        questionId = UUID.randomUUID();
+        questionId = UUID.randomUUID().toString();
     }
 
-    public UUID getQuestionId() {
+    public Question(String questionText, String positiveSystemAnswer, String negativeSystemAnswer, List<String> userAnswerIdsList){
+        questionId = UUID.randomUUID().toString();
+    }
+
+    public String getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(UUID questionId) {
+    public void setQuestionId(String questionId) {
         this.questionId = questionId;
     }
 
@@ -34,27 +41,27 @@ public class Question {
         this.questionText = questionText;
     }
 
-    public UUID getPositiveSystemAnswer() {
-        return positiveSystemAnswer;
+    public String getPositiveSystemAnswerId() {
+        return positiveSystemAnswerId;
     }
 
-    public void setPositiveSystemAnswer(UUID positiveSystemAnswer) {
-        this.positiveSystemAnswer = positiveSystemAnswer;
+    public void setPositiveSystemAnswerId(String positiveSystemAnswerId) {
+        this.positiveSystemAnswerId = positiveSystemAnswerId;
     }
 
-    public UUID getNegativeSystemAnswer() {
-        return negativeSystemAnswer;
+    public String getNegativeSystemAnswerId() {
+        return negativeSystemAnswerId;
     }
 
-    public void setNegativeSystemAnswer(UUID negativeSystemAnswer) {
-        this.negativeSystemAnswer = negativeSystemAnswer;
+    public void setNegativeSystemAnswerId(String negativeSystemAnswerId) {
+        this.negativeSystemAnswerId = negativeSystemAnswerId;
     }
 
-    public List<UUID> getUserAnswerIdsList() {
+    public List<String> getUserAnswerIdsList() {
         return userAnswerIdsList;
     }
 
-    public void setUserAnswerIdsList(List<UUID> userAnswerIdsList) {
+    public void setUserAnswerIdsList(List<String> userAnswerIdsList) {
         this.userAnswerIdsList = userAnswerIdsList;
     }
 }

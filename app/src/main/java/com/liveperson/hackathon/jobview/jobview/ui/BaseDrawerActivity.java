@@ -27,16 +27,6 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
 
     public DrawerLayout drawer;
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        //Show recording layout buttons:
-//        Button audioLayoutButton = (Button) findViewById(R.id.moveToRecordLayout);
-//        audioLayoutButton.setVisibility(View.VISIBLE);
-//        Button videoLayoutButton = (Button) findViewById(R.id.moveToRecordVideoLayout);
-//        videoLayoutButton.setVisibility(View.VISIBLE);
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,11 +45,9 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         toggle.syncState();
 
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-//            Button moveToRecorder = (Button) LayoutInflater.from(getApplication()).inflate(R.layout.activity_audio_recording_trial, null).findViewById(R.id.audioRecord);
-
 
     }
 

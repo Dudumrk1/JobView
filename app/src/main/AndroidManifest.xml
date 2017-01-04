@@ -37,7 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.GuidanceActivity"
-            android:label="@string/title_activity_lior"
+            android:label="@string/title_activity_guidance"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.AudioRecordingActivity"
@@ -55,6 +55,15 @@
             android:name=".ui.VideoViewActivity"
             android:label="@string/title_activity_video_view"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.TrainingActivity"
+            android:label="@string/title_activity_training"
+            android:parentActivityName=".ui.BaseDrawerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liveperson.hackathon.jobview.jobview.ui.BaseDrawerActivity" />
+        </activity>
     </application>
 
 </manifest>

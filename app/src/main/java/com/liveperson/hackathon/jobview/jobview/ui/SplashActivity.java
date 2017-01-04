@@ -1,23 +1,32 @@
 package com.liveperson.hackathon.jobview.jobview.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ui.ResultCodes;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.liveperson.hackathon.jobview.jobview.R;
+import com.liveperson.hackathon.jobview.jobview.controller.SessionManager;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
 import com.liveperson.hackathon.jobview.jobview.utils.PreferenceManager;
+import com.liveperson.hackathon.jobview.jobview.utils.StringUtils;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 public class SplashActivity extends AppCompatActivity {
+
+    private static final String TAG = "SplashActivity";
 
     private static final int RC_SIGN_IN = 12345;
     private static final String IS_FIRST_LOGIN = "is_first_login";
@@ -36,7 +45,8 @@ public class SplashActivity extends AppCompatActivity {
 
         PreferenceManager.initializeInstance(getApplicationContext());
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        if (auth.getCurrentUser() == null) {
+        final FirebaseUser currentUser = auth.getCurrentUser();
+        if (currentUser == null) {
             // not signed in
             startActivityForResult(
                     AuthUI.getInstance()
@@ -49,14 +59,25 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent i = new Intent(SplashActivity.this, RecordingButtonsActivity.class);
-                    startActivity(i);
+                    startDashboard(currentUser);
 
                     // close this activity
                     finish();
                 }
             }, SPLASH_TIME_OUT);
         }
+    }
+
+    private void startDashboard(FirebaseUser currentUser) {
+        String email = currentUser.getEmail();
+        String displayName = currentUser.getDisplayName();
+        String uid = currentUser.getUid();
+        Log.d(TAG, "email: " + email + ", displayName: " + displayName + ", uid: " + uid);
+        //TODO - create user and save to DB
+        SessionManager.getInstance().updateUser(new User(uid, displayName, email));
+
+        Intent i = new Intent(SplashActivity.this, BaseDrawerActivity.class);
+        startActivity(i);
     }
 
 
@@ -67,14 +88,9 @@ public class SplashActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // user is signed in!
                 Snackbar.make(mRootView, "Log-in ended successfully", Snackbar.LENGTH_LONG).show();
-
-                //Check if need to fill the personal details
-                boolean firstLogin = PreferenceManager.getInstance().getBooleanValue(IS_FIRST_LOGIN, true);
-                if (firstLogin){
-                    startActivity(new Intent(this, PersonalDetailsActivity.class));
-                    finish();
-
-                }
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                final FirebaseUser currentUser = auth.getCurrentUser();
+                startDashboard(currentUser);
                 return;
             }
 
