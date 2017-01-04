@@ -1,6 +1,7 @@
 package com.liveperson.hackathon.jobview.jobview.ui;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,13 +18,12 @@ public class GuidanceActivity extends BaseDrawerActivity {
 
     private static final int NUM_PAGES = 5;
 
-    private ViewPager mPager;
+    public ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_guidance);
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_guidance, null, false);
@@ -44,16 +44,18 @@ public class GuidanceActivity extends BaseDrawerActivity {
      */
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
 
-        private int counter = 0;
+        private String[] stringArray;
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
+            stringArray = getResources().getStringArray(R.array.guidanceStringsArray);
         }
 
         @Override
         public Fragment getItem(int position) {
             Bundle bundle = new Bundle();
-            bundle.putInt("LiorNumber", counter++);
+            bundle.putInt("PageNumber", mPager.getCurrentItem());
+            bundle.putStringArray("StringArray", stringArray);
 
             Fragment fragment = new GuidanceFragment();
             fragment.setArguments(bundle);
@@ -62,7 +64,7 @@ public class GuidanceActivity extends BaseDrawerActivity {
 
         @Override
         public int getCount() {
-            return NUM_PAGES;
+            return stringArray.length;
         }
     }
 }
