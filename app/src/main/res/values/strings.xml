@@ -10,6 +10,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_guidance">GuidanceActivity</string>
+    <string name="title_activity_training">TrainingActivity</string>
 
     <string-array name="OccupationalDomain">
         <item>תוכנה</item>
@@ -38,4 +39,15 @@
         <item>הכן מראש כמה שאלות</item>
         <item>חשוב על דברי הסיום שלך. הם יחתמו את הראיון ויותירו רושם רב אצל המראיין</item>
     </string-array>
+    <string-array name="domainQuestionsHR">
+        <item>ספר/י לי על עצמך</item>
+        <item>מה היה תפקידך האחרון ?</item>
+        <item>מה קרה כשמצאת עצמך ללא עבודה ?</item>
+        <item>תאר/י יום עבודה טיפוסי במקום העבודה האחרון שלך</item>
+        <item>כיצד היה מתאר אותך מישהו שמכיר אותך זמן רב ? באילו תארים היה משתמש ?</item>
+        <item>מה היו ההישגים הכי משמעותיים שלך במקומות העבודה האחרונים ?</item>
+        <item>תני דוגמה לאדם שאתה מעריך במיוחד, אילו תכונות אתה מעריך או מוקיר בו ?</item>
+    </string-array>
+
+
 </resources>
