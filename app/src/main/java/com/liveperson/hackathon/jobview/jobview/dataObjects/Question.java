@@ -8,21 +8,21 @@ import java.util.UUID;
  */
 
 public class Question {
-    private UUID questionId;
+    private String questionId;
     private String questionText;
-    private UUID positiveSystemAnswer;
-    private UUID negativeSystemAnswer;
-    private List<UUID> userAnswerIdsList;
+    private String positiveSystemAnswer;
+    private String negativeSystemAnswer;
+    private List<String> userAnswerIdsList;
 
     public Question() {
-        questionId = UUID.randomUUID();
+        questionId = UUID.randomUUID().toString();
     }
 
-    public UUID getQuestionId() {
+    public String getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(UUID questionId) {
+    public void setQuestionId(String questionId) {
         this.questionId = questionId;
     }
 
@@ -34,27 +34,27 @@ public class Question {
         this.questionText = questionText;
     }
 
-    public UUID getPositiveSystemAnswer() {
+    public String getPositiveSystemAnswer() {
         return positiveSystemAnswer;
     }
 
-    public void setPositiveSystemAnswer(UUID positiveSystemAnswer) {
+    public void setPositiveSystemAnswer(String positiveSystemAnswer) {
         this.positiveSystemAnswer = positiveSystemAnswer;
     }
 
-    public UUID getNegativeSystemAnswer() {
+    public String getNegativeSystemAnswer() {
         return negativeSystemAnswer;
     }
 
-    public void setNegativeSystemAnswer(UUID negativeSystemAnswer) {
+    public void setNegativeSystemAnswer(String negativeSystemAnswer) {
         this.negativeSystemAnswer = negativeSystemAnswer;
     }
 
-    public List<UUID> getUserAnswerIdsList() {
+    public List<String> getUserAnswerIdsList() {
         return userAnswerIdsList;
     }
 
-    public void setUserAnswerIdsList(List<UUID> userAnswerIdsList) {
+    public void setUserAnswerIdsList(List<String> userAnswerIdsList) {
         this.userAnswerIdsList = userAnswerIdsList;
     }
 }
