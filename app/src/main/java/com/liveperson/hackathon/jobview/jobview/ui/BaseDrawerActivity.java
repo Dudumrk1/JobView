@@ -1,7 +1,7 @@
 package com.liveperson.hackathon.jobview.jobview.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,43 +18,32 @@ import com.liveperson.hackathon.jobview.jobview.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BaseDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     // Choose an arbitrary request code value
-    private static final int RC_SIGN_IN = 12345;
-    private static final String IS_FIRST_LOGIN = "is_first_login";
-
     @BindView(android.R.id.content)
     View mRootView;
+
+    public DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_base_drawer);
         ButterKnife.bind(this);
-
-
-
         Snackbar.make(mRootView, "Log-in ended successfully - User already logged in", Snackbar.LENGTH_LONG).show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -101,17 +90,14 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_guidance) {
+            Intent i = new Intent(getApplicationContext(), GuidanceActivity.class);
+            startActivity(i);
+        } else if (id == R.id.nav_training) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_perosnal_dashboard) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_about) {
 
         }
 

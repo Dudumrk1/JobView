@@ -19,7 +19,7 @@ public class PersonalDetailsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(PersonalDetailsActivity.this, DashboardActivity.class);
+                Intent i = new Intent(PersonalDetailsActivity.this, BaseDrawerActivity.class);
                 startActivity(i);
             }
         });
