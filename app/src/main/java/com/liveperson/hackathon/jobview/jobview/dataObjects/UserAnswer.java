@@ -11,7 +11,7 @@ public class UserAnswer extends AbstractAnswer {
     private List<UUID> answerReviewsIds;
 
     public UserAnswer(List<UUID> answerReviewsIds) {
-        super();
+        answerId = UUID.randomUUID();
         this.answerReviewsIds = answerReviewsIds;
     }
 }

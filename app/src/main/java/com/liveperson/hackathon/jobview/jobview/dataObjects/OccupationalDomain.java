@@ -12,6 +12,31 @@ public class OccupationalDomain {
     String domainName;
     List<UUID> questionIdsList;
 
+    public OccupationalDomain() {
+        domainId = UUID.randomUUID();
+    }
 
+    public UUID getDomainId() {
+        return domainId;
+    }
 
+    public void setDomainId(UUID domainId) {
+        this.domainId = domainId;
+    }
+
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
+    public List<UUID> getQuestionIdsList() {
+        return questionIdsList;
+    }
+
+    public void setQuestionIdsList(List<UUID> questionIdsList) {
+        this.questionIdsList = questionIdsList;
+    }
 }

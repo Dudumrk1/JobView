@@ -17,4 +17,28 @@ public class AnswerReview {
     public AnswerReview() {
         reviewId = UUID.randomUUID();
     }
+
+    public UUID getReviewId() {
+        return reviewId;
+    }
+
+    public void setReviewId(UUID reviewId) {
+        this.reviewId = reviewId;
+    }
+
+    public UUID getReviewerUserId() {
+        return reviewerUserId;
+    }
+
+    public void setReviewerUserId(UUID reviewerUserId) {
+        this.reviewerUserId = reviewerUserId;
+    }
+
+    public List<UUID> getAnswerReviewElementsList() {
+        return AnswerReviewElementsList;
+    }
+
+    public void setAnswerReviewElementsList(List<UUID> answerReviewElementsList) {
+        AnswerReviewElementsList = answerReviewElementsList;
+    }
 }
