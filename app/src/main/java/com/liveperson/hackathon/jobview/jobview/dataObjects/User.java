@@ -7,6 +7,7 @@ import java.util.UUID;
  * Created by liorr on 1/4/17.
  */
 
+
 public class User {
     private String  userId;
     private String mName;
@@ -14,8 +15,13 @@ public class User {
     private OccupationalDomain mOccupationalDomainsList;
     private List<String> mAnsweredQuestions;
 
+    public User (){
+
+    }
     public User(String name, String email, OccupationalDomain occupationalDomain) {
         userId = UUID.randomUUID().toString();
+        mName = name;
+        mEmail = email;
     }
 
     public String getUserId() {
@@ -26,19 +32,19 @@ public class User {
         this.userId = userId;
     }
 
-    public String getName() {
+    public String getmName() {
         return mName;
     }
 
-    public void setName(String name) {
+    public void setmName(String name) {
         mName = name;
     }
 
-    public String getEmail() {
+    public String getmEmail() {
         return mEmail;
     }
 
-    public void setEmail(String email) {
+    public void setmEmail(String email) {
         mEmail = email;
     }
 
