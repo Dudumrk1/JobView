@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "670680843157",
+    "firebase_url": "https://jobview-5bd03.firebaseio.com",
+    "project_id": "jobview-5bd03",
+    "storage_bucket": "jobview-5bd03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670680843157:android:31633ffbdb77a33e",
+        "android_client_info": {
+          "package_name": "com.liveperson.hackathon.jobview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670680843157-mr4qdvfrjpcklhif1mntjeb0c28afrjj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liveperson.hackathon.jobview",
+            "certificate_hash": "E9F195A2D0293C05BC66797E1AAE6BBEEA6CEF17"
+          }
+        },
+        {
+          "client_id": "670680843157-i4s8t252i4boer39eo8bu8aj0gku1bqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO9qiAMO6-7FnBryU3iyzJHlU0Tm892Ww"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670680843157-i4s8t252i4boer39eo8bu8aj0gku1bqh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670680843157:android:1d957fdc89dd938c",
+        "android_client_info": {
+          "package_name": "com.liveperson.hackathon.jobview.jobview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670680843157-ql9h72p7hnua83oet7sgtlqgd3gqfmud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liveperson.hackathon.jobview.jobview",
+            "certificate_hash": "E9F195A2D0293C05BC66797E1AAE6BBEEA6CEF17"
+          }
+        },
+        {
+          "client_id": "670680843157-i4s8t252i4boer39eo8bu8aj0gku1bqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO9qiAMO6-7FnBryU3iyzJHlU0Tm892Ww"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670680843157-i4s8t252i4boer39eo8bu8aj0gku1bqh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
