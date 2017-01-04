@@ -10,8 +10,11 @@ import java.util.UUID;
 public class Question {
     private String questionId;
     private String questionText;
-    private String positiveSystemAnswer;
-    private String negativeSystemAnswer;
+    // Id of positive answer
+    private String positiveSystemAnswerId;
+    // Id of negative answer
+    private String negativeSystemAnswerId;
+    //List of user answer ids
     private List<String> userAnswerIdsList;
 
     public Question() {
@@ -38,20 +41,20 @@ public class Question {
         this.questionText = questionText;
     }
 
-    public String getPositiveSystemAnswer() {
-        return positiveSystemAnswer;
+    public String getPositiveSystemAnswerId() {
+        return positiveSystemAnswerId;
     }
 
-    public void setPositiveSystemAnswer(String positiveSystemAnswer) {
-        this.positiveSystemAnswer = positiveSystemAnswer;
+    public void setPositiveSystemAnswerId(String positiveSystemAnswerId) {
+        this.positiveSystemAnswerId = positiveSystemAnswerId;
     }
 
-    public String getNegativeSystemAnswer() {
-        return negativeSystemAnswer;
+    public String getNegativeSystemAnswerId() {
+        return negativeSystemAnswerId;
     }
 
-    public void setNegativeSystemAnswer(String negativeSystemAnswer) {
-        this.negativeSystemAnswer = negativeSystemAnswer;
+    public void setNegativeSystemAnswerId(String negativeSystemAnswerId) {
+        this.negativeSystemAnswerId = negativeSystemAnswerId;
     }
 
     public List<String> getUserAnswerIdsList() {
