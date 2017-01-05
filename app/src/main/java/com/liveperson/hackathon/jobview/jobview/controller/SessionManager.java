@@ -111,13 +111,19 @@ public  class SessionManager {
 
         SystemAnswer Q2answer1 = new SystemAnswer("תכנן את תשובתך באופן שאפשר יהיה לראות בחולשה שלך תכונה חיובית (דהיינו, אל תאמר: \"אני לא אוהב פיקוח-יתר כי אני שופע יזמה\". \"אני אוהב לצפות מראש בעיות, לפני שהן מתעוררות\\", null);
         SystemAnswer Q2answer2 = new SystemAnswer("אל תספק רשימה גדולה של חולשות - הסתפק באחת. מצד שני הימנע מלהגיד שאין לך חולשות.",null);
-        Question question2 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q2answer1.getAnswerId(),
+        Question question2 = new Question ("מהי החולשה הגדולה ביותר שלך ?",Q2answer1.getAnswerId(),
                 Q2answer2.getAnswerId(), null);
 
         SystemAnswer Q3answer1 = new SystemAnswer("ענה לשאלה זו באמצעות תגובה קצרה כגון, \"האתגר\", \"הזדמנויות הקידום\", \"תחומי האחריות המגוונים\", וכו'. אם תרצה לפרט, תינתן לך הזדמנות לעשות זאת", null);
         SystemAnswer Q3answer2 = new SystemAnswer("הימנע מלענות תשובה שמעידה על חוסר איכפתיות או איזכורים של משכורת והטבות.",null);
-        Question question3 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q3answer1.getAnswerId(),
+        Question question3 = new Question ("מה מעניין אותך במשרה זו ?",Q3answer1.getAnswerId(),
                 Q3answer2.getAnswerId(), null);
+
+        SystemAnswer Q4answer1 = new SystemAnswer("שאלה זו דומה לשאלה הקודמת, אך תשובתך לשאלה זו יכולה להיבדק בדקדקנות רבה יותר. מעסיקים נזהרים מאוד מאנשים הקופצים מעבודה לעבודה! אם היו לך הרבה מאוד עבודות קצרות-טווח, עליך לשכנע את המראיין שימים אלו כבר חלפו ושזוהי המשרה (ההזדמנות) שחיכית \n" +
+                "לה. עליך להיות כן וישר ולגרום למראיין לדעת ששינויי המשרה התכופים שלך לא היו קשורים ישירות בביצועי העבודה שלך.\n", null);
+        SystemAnswer Q4answer2 = new SystemAnswer("הימנע מלהאשים את המקומות הקודמים שעבדת בהם וכמובן לא את הממונים עליך בהם. ",null);
+        Question question4 = new Question ("מדוע החלפת עבודות לעיתים קרובות כל כך ? ",Q4answer1.getAnswerId(),
+                Q4answer2.getAnswerId(), null);
 
         questionsList.add(question1.getQuestionId());
         questionsList.add(question2.getQuestionId());
