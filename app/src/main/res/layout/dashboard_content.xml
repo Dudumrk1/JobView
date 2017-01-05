@@ -32,6 +32,10 @@
             android:textIsSelectable="false"
             android:textStyle="normal|bold" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
         <TextView
             android:text="אנא בחרו את תחום העיסוק הרלוונטי:"
             android:layout_width="match_parent"
@@ -42,12 +46,17 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="20dp" />
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/domainSpinner"/>
+            android:id="@+id/domainSpinner"
+            android:layout_gravity="right"
+            android:textDirection="rtl"
+            android:foregroundGravity="right"
+            android:gravity="right"
+            android:layoutDirection="rtl" />
 
         <Space
             android:layout_width="match_parent"
@@ -56,11 +65,11 @@
         <TextView
             android:text="השתמשו בתפריט הצדדי לצורך ניווט באפליקציה"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textDirection="rtl"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
-
-
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
