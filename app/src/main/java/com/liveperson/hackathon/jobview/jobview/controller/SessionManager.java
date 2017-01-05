@@ -1,15 +1,19 @@
 package com.liveperson.hackathon.jobview.jobview.controller;
 
+import android.net.Uri;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import com.liveperson.hackathon.jobview.jobview.dataObjects.AbstractAnswer;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.AnsweredQuestion;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.SystemAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.UserAnswer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -95,9 +99,7 @@ public  class SessionManager {
         // DB update
     }
 
-    public void setAnsweredId(String id){
-        mUser.addAnsweredQuestions(id);
-    }
+
 
     private void createPredefinedQuestionsList (){
         ArrayList<String> questionsList = new ArrayList<>();
@@ -109,13 +111,19 @@ public  class SessionManager {
 
         SystemAnswer Q2answer1 = new SystemAnswer("תכנן את תשובתך באופן שאפשר יהיה לראות בחולשה שלך תכונה חיובית (דהיינו, אל תאמר: \"אני לא אוהב פיקוח-יתר כי אני שופע יזמה\". \"אני אוהב לצפות מראש בעיות, לפני שהן מתעוררות\\", null);
         SystemAnswer Q2answer2 = new SystemAnswer("אל תספק רשימה גדולה של חולשות - הסתפק באחת. מצד שני הימנע מלהגיד שאין לך חולשות.",null);
-        Question question2 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q2answer1.getAnswerId(),
+        Question question2 = new Question ("מהי החולשה הגדולה ביותר שלך ?",Q2answer1.getAnswerId(),
                 Q2answer2.getAnswerId(), null);
 
         SystemAnswer Q3answer1 = new SystemAnswer("ענה לשאלה זו באמצעות תגובה קצרה כגון, \"האתגר\", \"הזדמנויות הקידום\", \"תחומי האחריות המגוונים\", וכו'. אם תרצה לפרט, תינתן לך הזדמנות לעשות זאת", null);
         SystemAnswer Q3answer2 = new SystemAnswer("הימנע מלענות תשובה שמעידה על חוסר איכפתיות או איזכורים של משכורת והטבות.",null);
-        Question question3 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q3answer1.getAnswerId(),
+        Question question3 = new Question ("מה מעניין אותך במשרה זו ?",Q3answer1.getAnswerId(),
                 Q3answer2.getAnswerId(), null);
+
+        SystemAnswer Q4answer1 = new SystemAnswer("שאלה זו דומה לשאלה הקודמת, אך תשובתך לשאלה זו יכולה להיבדק בדקדקנות רבה יותר. מעסיקים נזהרים מאוד מאנשים הקופצים מעבודה לעבודה! אם היו לך הרבה מאוד עבודות קצרות-טווח, עליך לשכנע את המראיין שימים אלו כבר חלפו ושזוהי המשרה (ההזדמנות) שחיכית \n" +
+                "לה. עליך להיות כן וישר ולגרום למראיין לדעת ששינויי המשרה התכופים שלך לא היו קשורים ישירות בביצועי העבודה שלך.\n", null);
+        SystemAnswer Q4answer2 = new SystemAnswer("הימנע מלהאשים את המקומות הקודמים שעבדת בהם וכמובן לא את הממונים עליך בהם. ",null);
+        Question question4 = new Question ("מדוע החלפת עבודות לעיתים קרובות כל כך ? ",Q4answer1.getAnswerId(),
+                Q4answer2.getAnswerId(), null);
 
         questionsList.add(question1.getQuestionId());
         questionsList.add(question2.getQuestionId());
@@ -130,6 +138,9 @@ public  class SessionManager {
         answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer2);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer1);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer2);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question1.getQuestionId()).setValue(question1);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question2.getQuestionId()).setValue(question2);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question3.getQuestionId()).setValue(question3);
 
       //  storeQuestionsInDB();
     }
@@ -157,27 +168,25 @@ public  class SessionManager {
     }
 
     public ArrayList<Question> fetchQuestionsByDomain(String domainName) {
+
         ArrayList<String> questionIds = new ArrayList<>();
         ArrayList<Question> questions = new ArrayList<>();
-
+        if (domainToQuestionIds.get(domainName) == null){
+             return questions;
+        }
         questionIds.addAll(domainToQuestionIds.get(domainName));
         for(String questionId : questionIds){
             questions.add(questionIdToQuestionData.get(questionId));
         }
 
 
-    /*    database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).addListenerForSingleValueEvent(new ValueEventListener() {
+       database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
+                    System.out.println("ffff ");
                     Map<String, Object> questionsMap = (HashMap<String, Object>) dataSnapshot.getValue();
-                    String userId = (String) userMap.get("userId");
-                    String email = (String) userMap.get("mEmail");
-                    String name = (String) userMap.get("mName");
-                    User user = new User();
-                    user.setUserId(userId);
-                    user.setmEmail(email);
-                    user.setmName(name);
+                    System.out.println("questionsMap " +questionsMap);
 // if need to update the UI this is the place..
 
 
@@ -191,8 +200,29 @@ public  class SessionManager {
 
             }
         });
-        */
+
         return questions;
+
+    }
+
+    public ArrayList<Question> fetchGeneralQuestions(){
+        ArrayList<String> questionIds = new ArrayList<>();
+        ArrayList<Question> questions = new ArrayList<>();
+
+        questionIds.addAll(domainToQuestionIds.get("HR"));
+        for(String questionId : questionIds){
+            questions.add(questionIdToQuestionData.get(questionId));
+        }
+        return questions;
+
+    }
+
+
+    public void updateUserAnswer(String questionId, Uri fileUri){
+        UserAnswer userAnswer = new UserAnswer(null,fileUri);
+        AnsweredQuestion answeredQuestion = new AnsweredQuestion(questionId, userAnswer.getAnswerId());
+        mUser.addAnsweredQuestions(answeredQuestion.getId());
+        answerIdsToAnswerData.put(userAnswer.getAnswerId(),userAnswer);
 
     }
 

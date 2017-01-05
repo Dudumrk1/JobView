@@ -1,5 +1,7 @@
 package com.liveperson.hackathon.jobview.jobview.dataObjects;
 
+import android.net.Uri;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -10,7 +12,7 @@ import java.util.UUID;
 public abstract class AbstractAnswer {
 
     protected String answerId;
-    protected String answerVideoId;
+    protected Uri uriFile;
     protected String answerText;
 
     public String  getAnswerId() {
@@ -21,12 +23,12 @@ public abstract class AbstractAnswer {
         this.answerId = answerId;
     }
 
-    public String  getAnswerVideoId() {
-        return answerVideoId;
+    public Uri  getUriFile() {
+        return uriFile;
     }
 
-    public void setAnswerVideoId(String answerVideoId) {
-        this.answerVideoId = answerVideoId;
+    public void setUriFile(Uri uriFile) {
+        this.uriFile = uriFile;
     }
 
     public String getAnswerText() {

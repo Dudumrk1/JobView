@@ -12,6 +12,7 @@ public class User {
     private String mName;
     private String mEmail;
     private OccupationalDomain mOccupationalDomains;
+    //list of answered question ids
     private List<String> mAnsweredQuestions;
 
     public User (){

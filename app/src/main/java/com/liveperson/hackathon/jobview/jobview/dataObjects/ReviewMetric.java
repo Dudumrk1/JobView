@@ -7,19 +7,19 @@ import java.util.UUID;
  */
 
 public class ReviewMetric {
-    private UUID reviewMetricId;
+    private String reviewMetricId;
     private String reviewMetricText;
 
     public ReviewMetric(String reviewMetricText) {
-        reviewMetricId = UUID.randomUUID();
+        reviewMetricId = UUID.randomUUID().toString();
         this.reviewMetricText = reviewMetricText;
     }
 
-    public UUID getReviewMetricId() {
+    public String getReviewMetricId() {
         return reviewMetricId;
     }
 
-    public void setReviewMetricId(UUID reviewMetricId) {
+    public void setReviewMetricId(String reviewMetricId) {
         this.reviewMetricId = reviewMetricId;
     }
 
