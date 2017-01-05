@@ -11,4 +11,10 @@ public class SystemAnswer extends AbstractAnswer {
     public SystemAnswer() {
         answerId = UUID.randomUUID().toString();
     }
+    public SystemAnswer(String answerText, String answerVideoId) {
+        super.answerText = answerText;
+       super.answerVideoId = answerVideoId;
+
+    }
+
 }
