@@ -15,8 +15,8 @@
     <string-array name="OccupationalDomain">
         <item>כללי</item>
         <item>תוכנה</item>
-        <item>עו״ד</item>
-        <item>רפואה</item>
+        <item>משפטים</item>
+        <item>עבודה סוציאלית</item>
         <item>פיננסים</item>
     </string-array>
 

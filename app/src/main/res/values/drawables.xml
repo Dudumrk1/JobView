@@ -7,20 +7,20 @@
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
 
     <integer-array name="guidanceImagesArray">
+        <item>@drawable/diary</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/clock</item>
+        <item>@drawable/interviewer</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/job_view_logo</item>
+        <item>@drawable/question</item>
         <item>@drawable/job_view_logo</item>
         <item>@drawable/job_view_logo</item>
         <item>@drawable/job_view_logo</item>
         <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
-        <item>@drawable/job_view_logo</item>
+        <item>@drawable/conversation</item>
+        <item>@drawable/eye</item>
         <item>@drawable/job_view_logo</item>
         <item>@drawable/job_view_logo</item>
         <item>@drawable/job_view_logo</item>
