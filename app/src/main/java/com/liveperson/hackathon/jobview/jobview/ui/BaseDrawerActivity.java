@@ -96,10 +96,11 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_training) {
             Intent i = new Intent(getApplicationContext(), TrainingActivity.class);
             startActivity(i);
-
         } else if (id == R.id.nav_perosnal_dashboard) {
-
+            Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_about) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

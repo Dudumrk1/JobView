@@ -1,9 +1,11 @@
 package com.liveperson.hackathon.jobview.jobview.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,7 +19,7 @@ import com.liveperson.hackathon.jobview.jobview.dataObjects.QuestionItemView;
 import java.util.ArrayList;
 
 
-public class TrainingActivity extends AppCompatActivity {
+public class TrainingActivity extends BaseDrawerActivity {
 
     ArrayList<ListItem> questionsView = new ArrayList<>();
     private ListItemAdapter mAdapter;
@@ -25,7 +27,11 @@ public class TrainingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_training);
+
+        // Load the drawer as well
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activity_training, null, false);
+        drawer.addView(contentView, 0);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
