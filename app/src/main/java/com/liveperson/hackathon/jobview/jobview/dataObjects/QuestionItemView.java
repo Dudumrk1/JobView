@@ -8,6 +8,8 @@ import com.liveperson.hackathon.jobview.jobview.R;
 import com.liveperson.hackathon.jobview.jobview.ui.ListItem;
 import com.liveperson.hackathon.jobview.jobview.ui.ListItemAdapter;
 
+import static android.view.View.TEXT_DIRECTION_RTL;
+
 /**
  * Created by dudu on 1/5/17.
  */
@@ -55,6 +57,7 @@ public class QuestionItemView implements ListItem {
 
         TextView textView = (TextView) view.findViewById(R.id.list_item_text);
         textView.setText(mQuestion.getQuestionText());
+        textView.setTextDirection(TEXT_DIRECTION_RTL);
 
         return view;
     }

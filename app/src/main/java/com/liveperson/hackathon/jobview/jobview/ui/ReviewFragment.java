@@ -10,8 +10,13 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.liveperson.hackathon.jobview.jobview.R;
+import com.liveperson.hackathon.jobview.jobview.controller.SessionManager;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.ReviewMetric;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,21 +30,32 @@ public class ReviewFragment extends DialogFragment {
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.fragment_review, null))
-                .setPositiveButton("הוספה", new DialogInterface.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_review, null);
+
+        SessionManager sessionManager = SessionManager.getInstance();
+        ArrayList<ReviewMetric> reviewMetricsList = sessionManager.getAllReviewMetrics();
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setView(inflater.inflate(R.layout.fragment_review, null));
+
+        ListView lv = (ListView) view.findViewById(R.id.reviewMetricListView);
+        lv.setAdapter(new ReviewMetricAdapter(getContext(), reviewMetricsList));
+
+
+        builder.setPositiveButton("הוספה", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
+                        // TODO send the data
                     }
                 })
                 .setNegativeButton("ביטול", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // User cancelled the dialog
+                        // Do nothing
                     }
                 });
+
         // Create the AlertDialog object and return it
         return builder.create();
     }
-
 }
