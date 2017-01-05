@@ -13,7 +13,7 @@ public class SystemAnswer extends AbstractAnswer {
     }
     public SystemAnswer(String answerText, String answerVideoId) {
         super.answerText = answerText;
-       super.answerVideoId = answerVideoId;
+//       super.answerVideoId = answerVideoId;
 
     }
 
