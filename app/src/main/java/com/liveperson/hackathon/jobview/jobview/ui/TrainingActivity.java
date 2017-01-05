@@ -3,7 +3,6 @@ package com.liveperson.hackathon.jobview.jobview.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,7 +54,7 @@ public class TrainingActivity extends AppCompatActivity {
 
         questionsView = questionsViewTmp;
 
-        ListView mListView = (ListView)findViewById(R.id.predefine_content_list);
+        ListView mListView = (ListView)findViewById(R.id.questions_list);
         mListView.setLongClickable(true);
         mAdapter = new ListItemAdapter(getApplicationContext(), questionsView);
         mListView.setAdapter(mAdapter);

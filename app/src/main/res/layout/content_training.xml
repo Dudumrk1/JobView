@@ -27,7 +27,7 @@
         <!--android:saveEnabled="false" />-->
 
     <ListView
-        android:id="@+id/predefine_content_list"
+        android:id="@+id/questions_list"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:stackFromBottom="false"
