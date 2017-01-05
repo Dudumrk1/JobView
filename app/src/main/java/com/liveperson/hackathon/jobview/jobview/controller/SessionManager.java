@@ -111,23 +111,23 @@ public  class SessionManager {
 
         SystemAnswer Q1answer1 = new SystemAnswer("התמקד בדברים החיוביים שהספקת לעשות בתקופה זו: הקדשת זמן למשפחה, חברים, תחביבים והרחבת הידע בתחומים שמעניינים אותך.", null);
         SystemAnswer Q1answer2 = new SystemAnswer("השתדל לא להישמע כאילו היית חסר מעש וללא אנרגיות. הימנע מלהזכיר תחושות דכאון או קושי שלא הצלחת להתגבר עליו.\"",null);
-        Question question1 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q1answer1.getAnswerId(),
+        Question question1 = new Question ("מה קרה כשמצאת עצמך ללא עבודה?",Q1answer1.getAnswerId(),
                 Q1answer2.getAnswerId(), null);
 
         SystemAnswer Q2answer1 = new SystemAnswer("תכנן את תשובתך באופן שאפשר יהיה לראות בחולשה שלך תכונה חיובית (דהיינו, אל תאמר: \"אני לא אוהב פיקוח-יתר כי אני שופע יזמה\". \"אני אוהב לצפות מראש בעיות, לפני שהן מתעוררות\\", null);
         SystemAnswer Q2answer2 = new SystemAnswer("אל תספק רשימה גדולה של חולשות - הסתפק באחת. מצד שני הימנע מלהגיד שאין לך חולשות.",null);
-        Question question2 = new Question ("מהי החולשה הגדולה ביותר שלך ?",Q2answer1.getAnswerId(),
+        Question question2 = new Question ("מהי החולשה הגדולה ביותר שלך?",Q2answer1.getAnswerId(),
                 Q2answer2.getAnswerId(), null);
 
         SystemAnswer Q3answer1 = new SystemAnswer("ענה לשאלה זו באמצעות תגובה קצרה כגון, \"האתגר\", \"הזדמנויות הקידום\", \"תחומי האחריות המגוונים\", וכו'. אם תרצה לפרט, תינתן לך הזדמנות לעשות זאת", null);
         SystemAnswer Q3answer2 = new SystemAnswer("הימנע מלענות תשובה שמעידה על חוסר איכפתיות או איזכורים של משכורת והטבות.",null);
-        Question question3 = new Question ("מה מעניין אותך במשרה זו ?",Q3answer1.getAnswerId(),
+        Question question3 = new Question ("מה מעניין אותך במשרה זו?",Q3answer1.getAnswerId(),
                 Q3answer2.getAnswerId(), null);
 
         SystemAnswer Q4answer1 = new SystemAnswer("שאלה זו דומה לשאלה הקודמת, אך תשובתך לשאלה זו יכולה להיבדק בדקדקנות רבה יותר. מעסיקים נזהרים מאוד מאנשים הקופצים מעבודה לעבודה! אם היו לך הרבה מאוד עבודות קצרות-טווח, עליך לשכנע את המראיין שימים אלו כבר חלפו ושזוהי המשרה (ההזדמנות) שחיכית \n" +
                 "לה. עליך להיות כן וישר ולגרום למראיין לדעת ששינויי המשרה התכופים שלך לא היו קשורים ישירות בביצועי העבודה שלך.\n", null);
         SystemAnswer Q4answer2 = new SystemAnswer("הימנע מלהאשים את המקומות הקודמים שעבדת בהם וכמובן לא את הממונים עליך בהם. ",null);
-        Question question4 = new Question ("מדוע החלפת עבודות לעיתים קרובות כל כך ? ",Q4answer1.getAnswerId(),
+        Question question4 = new Question ("מדוע החלפת עבודות לעיתים קרובות כל כך? ",Q4answer1.getAnswerId(),
                 Q4answer2.getAnswerId(), null);
 
         HRQuestionsList.add(question1.getQuestionId());
@@ -139,11 +139,11 @@ public  class SessionManager {
         ArrayList<String> financeQuestionsList = new ArrayList<>();
         SystemAnswer Q5answer1 = new SystemAnswer("התמקד בכך שאתה רוצה לעבוד בסביבה דינמית שמאפשרת התנסויות מגוונות ועניין משתנה.", null);
         SystemAnswer Q5answer2 = new SystemAnswer("השתדל להימנע מלבטא ביקורת גלויה על אופן התנהלות העבודה בבנק, התמקד בדברים החיוביים בעבודה בבית השקעות.\"",null);
-        Question question5 = new Question ("מדוע אתה מעדיף עבודה בבית השקעות ולא בבנק ?",Q5answer1.getAnswerId(),
+        Question question5 = new Question ("מדוע אתה מעדיף עבודה בבית השקעות ולא בבנק?",Q5answer1.getAnswerId(),
                 Q5answer2.getAnswerId(), null);
         SystemAnswer Q6answer1 = new SystemAnswer("זו שאלה שבודקת כמה עניין אתה מוצא בתחום הפיננסים. ענה בכנות והדגש את התחומים שמעניינים אותך במיוחד כדי להמשיך ולפתח בשיחה נושאים אלה.", null);
         SystemAnswer Q6answer2 = new SystemAnswer("אל תגזים בתשובתך! אם אתה קורא בקביעות עיתונים אלה - הדגש זאת, במידה ולא תתייחס לכך שבדברים הקשורים בתחום עבודתך חשוב לך להתעדכן.\"",null);
-        Question question6 = new Question ("האם אתה קורא את עיתוני הכלכלה באופן קבוע ? כל כמה זמן אתה מתעדכן ?",Q6answer1.getAnswerId(),
+        Question question6 = new Question ("האם אתה קורא את עיתוני הכלכלה באופן קבוע ? כל כמה זמן אתה מתעדכן?",Q6answer1.getAnswerId(),
                 Q6answer2.getAnswerId(), null);
         financeQuestionsList.add(question5.getQuestionId());
         financeQuestionsList.add(question6.getQuestionId());
