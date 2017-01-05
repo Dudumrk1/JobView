@@ -168,9 +168,12 @@ public  class SessionManager {
     }
 
     public ArrayList<Question> fetchQuestionsByDomain(String domainName) {
+
         ArrayList<String> questionIds = new ArrayList<>();
         ArrayList<Question> questions = new ArrayList<>();
-
+        if (domainToQuestionIds.get(domainName) == null){
+             return questions;
+        }
         questionIds.addAll(domainToQuestionIds.get(domainName));
         for(String questionId : questionIds){
             questions.add(questionIdToQuestionData.get(questionId));
@@ -219,6 +222,7 @@ public  class SessionManager {
         UserAnswer userAnswer = new UserAnswer(null,fileUri);
         AnsweredQuestion answeredQuestion = new AnsweredQuestion(questionId, userAnswer.getAnswerId());
         mUser.addAnsweredQuestions(answeredQuestion.getId());
+        answerIdsToAnswerData.put(userAnswer.getAnswerId(),userAnswer);
 
     }
 

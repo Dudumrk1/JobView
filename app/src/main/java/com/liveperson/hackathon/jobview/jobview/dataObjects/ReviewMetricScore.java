@@ -7,19 +7,19 @@ import java.util.UUID;
  */
 
 public class ReviewMetricScore {
-    private UUID metricId;
+    private String metricId;
     private int reviewMetricScore;
     private String reviewMetricText;
 
     public ReviewMetricScore() {
-        metricId = UUID.randomUUID();
+        metricId = UUID.randomUUID().toString();
     }
 
-    public UUID getMetricId() {
+    public String getMetricId() {
         return metricId;
     }
 
-    public void setMetricId(UUID metricId) {
+    public void setMetricId(String metricId) {
         this.metricId = metricId;
     }
 
