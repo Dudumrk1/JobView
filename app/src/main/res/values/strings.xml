@@ -50,8 +50,8 @@
         <item>תני דוגמה לאדם שאתה מעריך במיוחד, אילו תכונות אתה מעריך או מוקיר בו ?</item>
     </string-array>
     <string name="title_activity_video_view_screen">VideoViewScreenActivity</string>
-    <string name="title_activity_crowd_answers">CrowdAnswersActivity</string>
-    <string name="title_activity_video_view">VideoViewActivity</string>
+    <string name="title_activity_crowd_answers">תשובות לדוגמה</string>
+    <string name="title_activity_video_view">צפייה בוידאו</string>
 
 
 </resources>
