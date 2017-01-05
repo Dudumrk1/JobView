@@ -23,6 +23,10 @@ public class Question {
 
     public Question(String questionText, String positiveSystemAnswer, String negativeSystemAnswer, List<String> userAnswerIdsList){
         questionId = UUID.randomUUID().toString();
+        this.questionText = questionText;
+        this.positiveSystemAnswerId = positiveSystemAnswer;
+        this.negativeSystemAnswerId = negativeSystemAnswer;
+        this.userAnswerIdsList = userAnswerIdsList;
     }
 
     public String getQuestionId() {
