@@ -1,5 +1,6 @@
 package com.liveperson.hackathon.jobview.jobview.dataObjects;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,11 +22,8 @@ public class Question {
         questionId = UUID.randomUUID().toString();
     }
 
-    public Question(String questionId, String questionText, String positiveSystemAnswer, String negativeSystemAnswer) {
-        this.questionId = questionId;
-        this.questionText = questionText;
-        this.positiveSystemAnswerId = positiveSystemAnswer;
-        this.negativeSystemAnswerId = negativeSystemAnswer;
+    public Question(String questionText, String positiveSystemAnswer, String negativeSystemAnswer, List <String> userAnswerIdsList) {
+        questionId = UUID.randomUUID().toString();
         this.questionText = questionText;
         this.positiveSystemAnswerId = positiveSystemAnswer;
         this.negativeSystemAnswerId = negativeSystemAnswer;
