@@ -108,9 +108,9 @@ public class VideoRecordingActivity extends BaseDrawerActivity {
         mProgress.setMessage("Uploading Video...");
         mProgress.show();
 
-        StorageReference filepath = mStorageRef.child("Video").child("new_video.mp4");
-        Uri uri = Uri.fromFile(new File(fileName));
-        filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
+        Uri file = Uri.fromFile(new File(fileName));
+        StorageReference riversRef = mStorageRef.child("newVideo.mp4");
+        riversRef.putFile(file).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
                 mProgress.dismiss();
@@ -119,7 +119,7 @@ public class VideoRecordingActivity extends BaseDrawerActivity {
         .addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                System.out.println();
+                mProgress.dismiss();
             }
         });
     }
