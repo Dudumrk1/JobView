@@ -83,6 +83,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.liveperson.hackathon.jobview.jobview.ui.DashboardActivity" />
         </activity>
+        <activity
+            android:name=".ui.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
