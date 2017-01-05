@@ -59,6 +59,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "670680843157-kqiph7k8cclv7l9ahflbtdo6trsksf1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liveperson.hackathon.jobview.jobview",
+            "certificate_hash": "A8E5C516A5FFBEE057B73A1F7526EA91325334E0"
+          }
+        },
+        {
           "client_id": "670680843157-ql9h72p7hnua83oet7sgtlqgd3gqfmud.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
