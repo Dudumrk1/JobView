@@ -102,7 +102,7 @@ public  class SessionManager {
 
 
     private void createPredefinedQuestionsList (){
-        ArrayList<String> questionsList = new ArrayList<>();
+        ArrayList<String> HRQuestionsList = new ArrayList<>();
 
         SystemAnswer Q1answer1 = new SystemAnswer("התמקד בדברים החיוביים שהספקת לעשות בתקופה זו: הקדשת זמן למשפחה, חברים, תחביבים והרחבת הידע בתחומים שמעניינים אותך.", null);
         SystemAnswer Q1answer2 = new SystemAnswer("השתדל לא להישמע כאילו היית חסר מעש וללא אנרגיות. הימנע מלהזכיר תחושות דכאון או קושי שלא הצלחת להתגבר עליו.\"",null);
@@ -125,24 +125,41 @@ public  class SessionManager {
         Question question4 = new Question ("מדוע החלפת עבודות לעיתים קרובות כל כך ? ",Q4answer1.getAnswerId(),
                 Q4answer2.getAnswerId(), null);
 
-        questionsList.add(question1.getQuestionId());
-        questionsList.add(question2.getQuestionId());
-        questionsList.add(question3.getQuestionId());
-        domainToQuestionIds.put("HR", questionsList);
+        HRQuestionsList.add(question1.getQuestionId());
+        HRQuestionsList.add(question2.getQuestionId());
+        HRQuestionsList.add(question3.getQuestionId());
+        HRQuestionsList.add(question4.getQuestionId());
+        domainToQuestionIds.put("HR", HRQuestionsList);
+
+        ArrayList<String> financeQuestionsList = new ArrayList<>();
+        SystemAnswer Q5answer1 = new SystemAnswer("התמקד בכך שאתה רוצה לעבוד בסביבה דינמית שמאפשרת התנסויות מגוונות ועניין משתנה.", null);
+        SystemAnswer Q5answer2 = new SystemAnswer("השתדל להימנע מלבטא ביקורת גלויה על אופן התנהלות העבודה בבנק, התמקד בדברים החיוביים בעבודה בבית השקעות.\"",null);
+        Question question5 = new Question ("מדוע אתה מעדיף עבודה בבית השקעות ולא בבנק ?",Q5answer1.getAnswerId(),
+                Q5answer2.getAnswerId(), null);
+
+        domainToQuestionIds.put("פיננסים", financeQuestionsList);
         questionIdToQuestionData.put(question1.getQuestionId(),question1);
         questionIdToQuestionData.put(question2.getQuestionId(),question2);
         questionIdToQuestionData.put(question3.getQuestionId(),question3);
+        questionIdToQuestionData.put(question4.getQuestionId(),question4);
+        questionIdToQuestionData.put(question5.getQuestionId(),question5);
         answerIdsToAnswerData.put(Q1answer1.getAnswerId(), Q1answer1);
         answerIdsToAnswerData.put(Q1answer2.getAnswerId(), Q1answer2);
         answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer1);
-        answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer2);
+        answerIdsToAnswerData.put(Q2answer2.getAnswerId(), Q2answer2);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer1);
-        answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer2);
+        answerIdsToAnswerData.put(Q3answer2.getAnswerId(), Q3answer2);
+        answerIdsToAnswerData.put(Q4answer1.getAnswerId(), Q4answer1);
+        answerIdsToAnswerData.put(Q4answer2.getAnswerId(), Q4answer2);
+        answerIdsToAnswerData.put(Q5answer1.getAnswerId(), Q5answer1);
+        answerIdsToAnswerData.put(Q5answer2.getAnswerId(), Q5answer2);
+
         database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question1.getQuestionId()).setValue(question1);
         database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question2.getQuestionId()).setValue(question2);
         database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question3.getQuestionId()).setValue(question3);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question4.getQuestionId()).setValue(question4);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question5.getQuestionId()).setValue(question5);
 
-      //  storeQuestionsInDB();
     }
 
     public Question getQuestionById (String questionId) {
@@ -225,8 +242,6 @@ public  class SessionManager {
         answerIdsToAnswerData.put(userAnswer.getAnswerId(),userAnswer);
 
     }
-
-
 
 
 }
