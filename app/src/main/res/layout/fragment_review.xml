@@ -14,83 +14,12 @@
 
         <ListView
             android:id="@+id/reviewMetricListView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textDirection="rtl">
-
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/reviewMetricRatingBar1"
-                android:layout_weight="1"
-                android:numStars="5"
-                android:stepSize="1" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/reviewMetricText1"
-                android:layout_weight="1"
-                android:textDirection="rtl"
-                android:gravity="center" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textDirection="rtl">
-
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/reviewMetricRatingBar2"
-                android:layout_weight="1"
-                android:numStars="5"
-                android:stepSize="1" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/reviewMetricText2"
-                android:layout_weight="1"
-                android:textDirection="rtl"
-                android:gravity="center" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textDirection="rtl">
-
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/reviewMetricRatingBar3"
-                android:layout_weight="1"
-                android:numStars="5"
-                android:stepSize="1" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/reviewMetricText3"
-                android:layout_weight="1"
-                android:textDirection="rtl"
-                android:gravity="center" />
-
-        </LinearLayout>
+            android:stackFromBottom="false"
+            android:transcriptMode="alwaysScroll"
+            android:divider="@null"
+            android:listSelector="@drawable/my_list_selector_dark"/>
 
 
     </LinearLayout>

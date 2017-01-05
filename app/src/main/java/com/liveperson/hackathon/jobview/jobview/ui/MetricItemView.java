@@ -1,12 +1,11 @@
-package com.liveperson.hackathon.jobview.jobview.dataObjects;
+package com.liveperson.hackathon.jobview.jobview.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
 import com.liveperson.hackathon.jobview.jobview.R;
-import com.liveperson.hackathon.jobview.jobview.ui.ListItem;
-import com.liveperson.hackathon.jobview.jobview.ui.ListItemAdapter;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.ReviewMetric;
 
 import static android.view.View.TEXT_DIRECTION_RTL;
 
@@ -14,30 +13,26 @@ import static android.view.View.TEXT_DIRECTION_RTL;
  * Created by dudu on 1/5/17.
  */
 
-public class QuestionItemView implements ListItem {
-    Question mQuestion;
+public class MetricItemView implements ListItem {
+    ReviewMetric metric;
 
-    public QuestionItemView(Question question) {
-        mQuestion = question;
-    }
-
-    public Question getQuestion() {
-        return mQuestion;
+    public MetricItemView(ReviewMetric metric) {
+        this.metric = metric;
     }
 
     @Override
     public String getKey() {
-        return mQuestion.getQuestionId();
+        return metric.getReviewMetricId();
     }
 
     @Override
     public String getValue() {
-        return mQuestion.getQuestionText();
+        return metric.getReviewMetricText();
     }
 
     @Override
     public String getType() {
-        return "question";
+        return "metric";
     }
 
     @Override
@@ -49,14 +44,14 @@ public class QuestionItemView implements ListItem {
     public View getView(LayoutInflater inflater, View convertView) {
         View view;
         if (convertView == null) {
-            view = (View) inflater.inflate(R.layout.list_item, null);
+            view = (View) inflater.inflate(R.layout.metric_row, null);
             // Do some initialization
         } else {
             view = convertView;
         }
 
-        TextView textView = (TextView) view.findViewById(R.id.list_item_text);
-        textView.setText(mQuestion.getQuestionText());
+        TextView textView = (TextView) view.findViewById(R.id.reviewMetricText);
+        textView.setText(metric.getReviewMetricText());
         textView.setTextDirection(TEXT_DIRECTION_RTL);
 
         return view;

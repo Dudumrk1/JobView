@@ -3,18 +3,36 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <TextView
-        android:id="@+id/reviewMetricText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textDirection="rtl"
-        android:text="TextView" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/reviewMetricRatingBar"
-        android:numStars="5"
-        android:stepSize="1" />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reviewMetricRatingBar"
+            android:layout_alignParentStart="true"
+            android:numStars="5"
+            android:stepSize="1"
+            android:isIndicator="true"
+            android:layout_weight="0.6"/>
+
+        <TextView
+            android:id="@+id/reviewMetricText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textDirection="rtl"
+            android:layout_alignParentEnd="false"
+            android:text="TextView"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical"
+            android:foregroundGravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:id="@+id/line_header_text"/>
 
 </RelativeLayout>

@@ -12,7 +12,6 @@ import com.liveperson.hackathon.jobview.jobview.R;
 import com.liveperson.hackathon.jobview.jobview.controller.SessionManager;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
-import com.liveperson.hackathon.jobview.jobview.dataObjects.QuestionItemView;
 
 import java.util.ArrayList;
 
@@ -55,7 +54,6 @@ public class TrainingActivity extends AppCompatActivity {
         questionsView = questionsViewTmp;
 
         ListView mListView = (ListView)findViewById(R.id.questions_list);
-        mListView.setLongClickable(true);
         mAdapter = new ListItemAdapter(getApplicationContext(), questionsView);
         mListView.setAdapter(mAdapter);
 
