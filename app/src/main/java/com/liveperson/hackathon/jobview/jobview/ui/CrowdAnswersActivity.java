@@ -36,13 +36,15 @@ public class CrowdAnswersActivity extends BaseDrawerActivity {
         ListView listView = (ListView) findViewById(R.id.crowd_answers_list_view);
 
         List<String> your_array_list = new ArrayList<String>();
-        your_array_list.add("foo");
-        your_array_list.add("bar");
+        your_array_list.add("יוסי כהן");
+        your_array_list.add("אליענה לוי");
+        your_array_list.add("ברק ארגמן");
+        your_array_list.add("תהילה ביטון");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
-                your_array_list );
+                your_array_list);
 
         listView.setAdapter(arrayAdapter);
 

@@ -72,14 +72,17 @@ public class VideoViewActivity extends BaseDrawerActivity {
         //specify the location of media file
         // TODO: change this to a value taken from data structure
 //        downloadVideo()
-        Uri uri = Uri.parse(VideoRecordingActivity.realPath);
 
-        //Setting MediaController and URI, then starting the videoView
-        videoView.setMediaController(mediaController);
-        videoView.setVideoURI(uri);
-        videoView.requestFocus();
-        videoView.start();
+        Uri uri;
 
+        if (VideoRecordingActivity.realPath != null) {
+            uri =Uri.parse(VideoRecordingActivity.realPath);
+            //Setting MediaController and URI, then starting the videoView
+            videoView.setMediaController(mediaController);
+            videoView.setVideoURI(uri);
+            videoView.requestFocus();
+            videoView.start();
+        }
     }
 
     private String downloadVideo(String pathToLook){

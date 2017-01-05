@@ -10,14 +10,69 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.liveperson.hackathon.jobview.jobview.ui.VideoRecordingActivity">
 
-    <Button
-        android:text="Record video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:id="@+id/recordVideo"/>
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="הקליטו את עצמכם כהכנה לראיון העבודה!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:text="לחצו להקלטה"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/recordVideo"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:layout_gravity="center_vertical|center_horizontal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <VideoView
+            android:layout_width="wrap_content"
+            android:layout_height="201dp"
+            android:id="@+id/takeVideoView"
+            android:layout_gravity="center" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="ביטול"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancelVideoBtn"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="שתף סרטון"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/uploadVideoBtn"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
