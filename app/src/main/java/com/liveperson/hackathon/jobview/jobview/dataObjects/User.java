@@ -63,7 +63,7 @@ public class User {
         mAnsweredQuestions = answeredQuestions;
     }
 
-    public void setAnsweredQuestions(String answeredQuestions) {
+    public void addAnsweredQuestions(String answeredQuestions) {
         mAnsweredQuestions.add(answeredQuestions);
     }
 }

@@ -92,7 +92,7 @@ public  class SessionManager {
     }
 
     public void setAnsweredId(String id){
-        mUser.setAnsweredQuestions(id);
+        mUser.addAnsweredQuestions(id);
     }
 
     private void createPredefinedQuestionsList (){
