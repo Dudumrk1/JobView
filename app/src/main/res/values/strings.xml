@@ -9,16 +9,22 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_training">TrainingActivity</string>
+    <string name="title_activity_training">אימון לקראת ראיון</string>
     <string name="title_activity_guidance">עקרונות מנחים לראיון</string>
 
     <string-array name="OccupationalDomain">
         <item>כללי</item>
         <item>תוכנה</item>
-        <item>עו״ד</item>
-        <item>רפואה</item>
+        <item>משפטים</item>
+        <item>עבודה סוציאלית</item>
         <item>פיננסים</item>
     </string-array>
+
+    <string name="AboutStr">
+        האפלקציה הזו נכתבה במסגרת ההאקטון החברתי הראשון בחסות ארגון הג'וינט.
+        האפליקציה נועדה לעזור מחפשי עבודה באשר הם: בעולם העבודה הנוכחי אדם ידרש לעבור מס' רב של ראיונות עבודה במשך חייו.
+        השירות שלנו יוכל להיות אף בשימוש של אנשים מקצוע מתחום משאבי אנוש אשר מעוניינים בהכנסה נוספת.
+    </string>
 
     <string-array name="guidanceStringsArray">
         <item>רשום את כתובת הארגון, התאריך והשעה של הראיון ביומן באופן מסודר</item>
@@ -56,6 +62,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_about">AboutActivity</string>
 
 
 </resources>

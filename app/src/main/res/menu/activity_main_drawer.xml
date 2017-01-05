@@ -4,15 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_guidance"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_gallery"
             android:title="הדרכה"/>
         <item
             android:id="@+id/nav_training"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_camera"
             android:title="אימון"/>
         <item
             android:id="@+id/nav_perosnal_dashboard"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_home"
             android:title="דף הבית"/>
         <item
             android:id="@+id/nav_about"
