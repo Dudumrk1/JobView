@@ -70,6 +70,15 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".ui.CrowdAnswersActivity"
+            android:label="@string/title_activity_crowd_answers"
+            android:parentActivityName=".ui.BaseDrawerActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liveperson.hackathon.jobview.jobview.ui.BaseDrawerActivity" />
+        </activity>
+        <activity
             android:name=".ui.VideoViewActivity"
             android:label="@string/title_activity_video_view"
             android:parentActivityName=".ui.BaseDrawerActivity"
