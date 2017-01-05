@@ -9,8 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.liveperson.hackathon.jobview.jobview.R;
+
+import static java.security.AccessController.getContext;
 
 public class VideoRecordingActivity extends BaseDrawerActivity {
     static final int REQUEST_VIDEO_CAPTURE = 1;
@@ -59,5 +62,8 @@ public class VideoRecordingActivity extends BaseDrawerActivity {
         if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
         }
+        Toast toast = Toast.makeText(getApplicationContext(), takeVideoIntent.getDataString(), Toast.LENGTH_SHORT);
+        toast.show();
+
     }
 }
