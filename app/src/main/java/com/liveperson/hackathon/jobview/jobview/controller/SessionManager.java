@@ -5,6 +5,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import com.liveperson.hackathon.jobview.jobview.dataObjects.AbstractAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.SystemAnswer;
@@ -29,6 +30,7 @@ public  class SessionManager {
     private User mUser;
     private HashMap <String,ArrayList<String>> domainToQuestionIds = new HashMap<>();
     private HashMap <String,Question> questionIdToQuestionData = new HashMap<>();
+    private HashMap <String,AbstractAnswer> answerIdsToAnswerData = new HashMap<>();
 
     FirebaseDatabase database;
     private SessionManager()
@@ -118,8 +120,12 @@ public  class SessionManager {
         questionIdToQuestionData.put(question1.getQuestionId(),question1);
         questionIdToQuestionData.put(question2.getQuestionId(),question2);
         questionIdToQuestionData.put(question3.getQuestionId(),question3);
-
-
+        answerIdsToAnswerData.put(Q1answer1.getAnswerId(), Q1answer1);
+        answerIdsToAnswerData.put(Q1answer2.getAnswerId(), Q1answer2);
+        answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer1);
+        answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer2);
+        answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer1);
+        answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer2);
     }
 
     public Question getQuestionById (String questionId) {
@@ -131,6 +137,17 @@ public  class SessionManager {
            //TODO - go to DB
            return null;
        }
+    }
+
+    public AbstractAnswer getAnswerById (String answerId){
+        AbstractAnswer answerData = answerIdsToAnswerData.get(answerId);
+        if (answerData != null){
+            return answerData;
+        }
+        else{
+            //TODO - go to DB
+            return null;
+        }
     }
 
     public ArrayList<Question> fetchQuestions() {
