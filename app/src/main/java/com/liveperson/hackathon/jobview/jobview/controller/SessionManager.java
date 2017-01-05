@@ -111,7 +111,7 @@ public  class SessionManager {
 
         SystemAnswer Q1answer1 = new SystemAnswer("התמקד בדברים החיוביים שהספקת לעשות בתקופה זו: הקדשת זמן למשפחה, חברים, תחביבים והרחבת הידע בתחומים שמעניינים אותך.", null);
         SystemAnswer Q1answer2 = new SystemAnswer("השתדל לא להישמע כאילו היית חסר מעש וללא אנרגיות. הימנע מלהזכיר תחושות דכאון או קושי שלא הצלחת להתגבר עליו.\"",null);
-        Question question1 = new Question ("מה קרה כשמצאת עצמך ללא עבודה?",Q1answer1.getAnswerId(),
+        Question question1 = new Question ("מה קרה שמצאת את עצמך ללא עבודה?",Q1answer1.getAnswerId(),
                 Q1answer2.getAnswerId(), null);
 
         SystemAnswer Q2answer1 = new SystemAnswer("תכנן את תשובתך באופן שאפשר יהיה לראות בחולשה שלך תכונה חיובית (דהיינו, אל תאמר: \"אני לא אוהב פיקוח-יתר כי אני שופע יזמה\". \"אני אוהב לצפות מראש בעיות, לפני שהן מתעוררות\\", null);
