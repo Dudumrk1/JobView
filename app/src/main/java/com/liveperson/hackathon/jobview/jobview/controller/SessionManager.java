@@ -95,12 +95,12 @@ public  class SessionManager {
         return mUser;
     }
 
-    public String getUserDomain(){
-        return mUser.getOccupationalDomains().getDomainName();
+    public OccupationalDomain getUserDomain(){
+        return mUser.getOccupationalDomains();
     }
 
-    public void setUserDomain(String domain){
-        mUser.setOccupationalDomains(new OccupationalDomain(domain));
+    public void setUserDomain(int domainId, String domain){
+        mUser.setOccupationalDomains(new OccupationalDomain(domainId, domain));
         // DB update
     }
 

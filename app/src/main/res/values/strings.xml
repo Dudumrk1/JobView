@@ -13,8 +13,9 @@
     <string name="title_activity_guidance">עקרונות מנחים לראיון</string>
 
     <string-array name="OccupationalDomain">
+        <item>כללי</item>
         <item>תוכנה</item>
-        <item>ען״ד</item>
+        <item>עו״ד</item>
         <item>רפואה</item>
         <item>פיננסים</item>
     </string-array>

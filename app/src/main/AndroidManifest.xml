@@ -28,11 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.PersonalDetailsActivity"
-            android:label="Personal Data"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.BaseDrawerActivity"
+            android:name=".ui.DashboardActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -42,20 +38,20 @@
         <activity
             android:name=".ui.SingleQuestionActivity"
             android:label="@string/title_activity_single_question"
-            android:parentActivityName=".ui.BaseDrawerActivity"
+            android:parentActivityName=".ui.DashboardActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liveperson.hackathon.jobview.jobview.ui.BaseDrawerActivity" />
+                android:value="com.liveperson.hackathon.jobview.jobview.ui.DashboardActivity" />
         </activity>
         <activity
             android:name=".ui.TrainingActivity"
             android:label="@string/title_activity_training"
-            android:parentActivityName=".ui.BaseDrawerActivity"
+            android:parentActivityName=".ui.DashboardActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liveperson.hackathon.jobview.jobview.ui.BaseDrawerActivity" />
+                android:value="com.liveperson.hackathon.jobview.jobview.ui.DashboardActivity" />
         </activity>
         <activity
             android:name=".ui.AudioRecordingActivity"
@@ -72,11 +68,11 @@
         <activity
             android:name=".ui.CrowdAnswersActivity"
             android:label="@string/title_activity_crowd_answers"
-            android:parentActivityName=".ui.BaseDrawerActivity"
+            android:parentActivityName=".ui.DashboardActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liveperson.hackathon.jobview.jobview.ui.BaseDrawerActivity" />
+                android:value="com.liveperson.hackathon.jobview.jobview.ui.DashboardActivity" />
         </activity>
         <activity
             android:name=".ui.VideoViewActivity"
@@ -85,7 +81,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liveperson.hackathon.jobview.jobview.ui.BaseDrawerActivity" />
+                android:value="com.liveperson.hackathon.jobview.jobview.ui.DashboardActivity" />
         </activity>
     </application>
 

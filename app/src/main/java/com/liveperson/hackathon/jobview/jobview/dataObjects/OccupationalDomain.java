@@ -8,23 +8,24 @@ import java.util.UUID;
  */
 
 public class OccupationalDomain {
-    String domainId;
+    long domainId;
     String domainName;
-    List<String> questionIdsList;
+    List<UUID> questionIdsList;
 
-    public OccupationalDomain() {
-        domainId = UUID.randomUUID().toString();
+    public OccupationalDomain(long domainId, String domainName) {
+        this.domainName = domainName;
+        this.domainId = domainId;
     }
 
     public OccupationalDomain(String domainName) {
         this.domainName = domainName;
     }
 
-    public String getDomainId() {
+    public long getDomainId() {
         return domainId;
     }
 
-    public void setDomainId(String domainId) {
+    public void setDomainId(long domainId) {
         this.domainId = domainId;
     }
 
@@ -36,11 +37,11 @@ public class OccupationalDomain {
         this.domainName = domainName;
     }
 
-    public List<String> getQuestionIdsList() {
+    public List<UUID> getQuestionIdsList() {
         return questionIdsList;
     }
 
-    public void setQuestionIdsList(List<String> questionIdsList) {
+    public void setQuestionIdsList(List<UUID> questionIdsList) {
         this.questionIdsList = questionIdsList;
     }
 }

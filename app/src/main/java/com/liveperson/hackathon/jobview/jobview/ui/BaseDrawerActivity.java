@@ -40,7 +40,6 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
 
         setContentView(R.layout.activity_base_drawer);
         ButterKnife.bind(this);
-        Snackbar.make(mRootView, "Log-in ended successfully - User already logged in", Snackbar.LENGTH_LONG).show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -105,6 +104,8 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
             Intent i = new Intent(getApplicationContext(), GuidanceActivity.class);
             startActivity(i);
         } else if (id == R.id.nav_training) {
+            Intent i = new Intent(getApplicationContext(), TrainingActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_perosnal_dashboard) {
 

@@ -53,7 +53,6 @@ public class SplashActivity extends AppCompatActivity {
                             .createSignInIntentBuilder()
                             .build(),
                     RC_SIGN_IN);
-            finish();
         } else {
 
             new Handler().postDelayed(new Runnable() {
@@ -76,7 +75,7 @@ public class SplashActivity extends AppCompatActivity {
         //TODO - create user and save to DB
         SessionManager.getInstance().updateUser(new User(uid, displayName, email));
 
-        Intent i = new Intent(SplashActivity.this, BaseDrawerActivity.class);
+        Intent i = new Intent(SplashActivity.this, DashboardActivity.class);
         startActivity(i);
     }
 
