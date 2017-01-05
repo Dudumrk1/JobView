@@ -28,15 +28,6 @@ public class AboutActivity extends BaseDrawerActivity {
         String data = getResources().getString(R.string.AboutStr);
         TextView AboutText = (TextView) findViewById(R.id.AboutTxt);
         AboutText.setText(data);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
 }

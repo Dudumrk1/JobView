@@ -13,13 +13,32 @@
     tools:context="com.liveperson.hackathon.jobview.jobview.ui.AboutActivity"
     tools:showIn="@layout/activity_about">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="35dp"
-        android:id="@+id/AboutTxt" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/AboutTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center"
+            android:text="TextView" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="227dp"
+            android:foregroundGravity="bottom"
+            app:srcCompat="@drawable/job_view_logo" />
+    </LinearLayout>
+
 </RelativeLayout>
