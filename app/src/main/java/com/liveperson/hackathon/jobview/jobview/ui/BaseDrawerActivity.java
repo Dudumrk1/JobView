@@ -100,7 +100,8 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
             Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
             startActivity(i);
         } else if (id == R.id.nav_about) {
-
+            Intent i = new Intent(getApplicationContext(), AboutActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
