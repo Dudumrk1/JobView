@@ -35,27 +35,19 @@ public class ReviewFragment extends DialogFragment {
         // Use the Builder class for convenient dialog construction
         View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_review, null);
 
-        ListView mListView = (ListView)view.findViewById(R.id.reviewMetricListView);
+//        ListView mListView = (ListView)view.findViewById(R.id.reviewMetricListView);
 
-        SessionManager sessionManager = SessionManager.getInstance();
-        ArrayList<ListItem> metricRowsViewTmp = new ArrayList<>();
-        for(ReviewMetric rm: sessionManager.getAllReviewMetrics()){
-            metricRowsViewTmp.add(new MetricItemView(rm));
-        }
+//        SessionManager sessionManager = SessionManager.getInstance();
+//        ArrayList<ListItem> metricRowsViewTmp = new ArrayList<>();
+//        for(ReviewMetric rm: sessionManager.getAllReviewMetrics()){
+//            metricRowsViewTmp.add(new MetricItemView(rm));
+//        }
+//
+//        metricRowsView = metricRowsViewTmp;
+//
+//        mAdapter = new ListItemAdapter(getActivity(), metricRowsView);
+//        mListView.setAdapter(mAdapter);
 
-        metricRowsView = metricRowsViewTmp;
-
-        mAdapter = new ListItemAdapter(getActivity(), metricRowsView);
-        mListView.setAdapter(mAdapter);
-
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getActivity(), SingleQuestionActivity.class);
-                i.putExtra("QuestionId", mAdapter.getItem(position).getKey());
-                startActivity(i);
-            }
-        });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 

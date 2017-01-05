@@ -3,6 +3,7 @@ package com.liveperson.hackathon.jobview.jobview.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.TextViewCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.liveperson.hackathon.jobview.jobview.R;
+import com.liveperson.hackathon.jobview.jobview.controller.SessionManager;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
 
 import java.util.List;
 import java.util.UUID;

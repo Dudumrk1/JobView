@@ -57,30 +57,4 @@ public class ReviewMetricAdapter extends ArrayAdapter<ReviewMetric> {
         return convertView;
     }
 
-    /*
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
-
-        if (convertView == null) {
-            convertView = LayoutInflater.from(this.getContext())
-                    .inflate(R.layout.metric_row, parent, false);
-
-            viewHolder = new ViewHolder();
-            viewHolder.itemView = (TextView) convertView.findViewById(R.id.reviewMetricText);
-            viewHolder.ratingBar = (RatingBar) convertView.findViewById(R.id.reviewMetricRatingBar);
-
-            convertView.setTag(viewHolder);
-
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
-
-        ReviewMetric item = getItem(position);
-        if (item != null) {
-            viewHolder.itemView.setText(item.getReviewMetricText());
-        }
-
-        return convertView;
-    }
-     */
 }
