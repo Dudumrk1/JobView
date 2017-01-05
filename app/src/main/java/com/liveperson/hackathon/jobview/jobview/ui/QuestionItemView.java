@@ -26,12 +26,18 @@ public class QuestionItemView implements ListItem {
 
     @Override
     public String getKey() {
-        return mQuestion.getQuestionId();
+        if (mQuestion != null) {
+            return mQuestion.getQuestionId();
+        }
+        return null;
     }
 
     @Override
     public String getValue() {
-        return mQuestion.getQuestionText();
+        if (mQuestion != null) {
+            return mQuestion.getQuestionText();
+        }
+        return null;
     }
 
     @Override
@@ -55,9 +61,10 @@ public class QuestionItemView implements ListItem {
         }
 
         TextView textView = (TextView) view.findViewById(R.id.list_item_text);
-        textView.setText(mQuestion.getQuestionText());
-        textView.setTextDirection(TEXT_DIRECTION_RTL);
-
+        if (mQuestion != null) {
+            textView.setText(mQuestion.getQuestionText());
+            textView.setTextDirection(TEXT_DIRECTION_RTL);
+        }
         return view;
     }
 }
