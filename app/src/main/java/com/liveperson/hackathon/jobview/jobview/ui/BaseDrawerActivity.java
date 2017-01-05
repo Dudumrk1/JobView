@@ -31,9 +31,6 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
 
     public DrawerLayout drawer;
 
-    // TODO remove
-    final static Question question = new Question();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,13 +46,6 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
-
-//        question =
-//        question.setPositiveSystemAnswer();
-//        question.setNegativeSystemAnswer();
-        question.setQuestionText("I am a question");
-//        question.setUserAnswerIdsList();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -110,9 +100,6 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_perosnal_dashboard) {
 
         } else if (id == R.id.nav_about) {
-            Intent i = new Intent(getApplicationContext(), SingleQuestionActivity.class);
-            i.putExtra("QuestionId", question.getQuestionId().toString());
-            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

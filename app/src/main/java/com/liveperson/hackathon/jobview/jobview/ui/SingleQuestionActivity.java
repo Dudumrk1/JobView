@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.liveperson.hackathon.jobview.jobview.R;
 import com.liveperson.hackathon.jobview.jobview.controller.SessionManager;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.AbstractAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
@@ -37,27 +38,23 @@ public class SingleQuestionActivity extends BaseDrawerActivity {
 
         SessionManager sessionManager = SessionManager.getInstance();
 
-        String questionId = getIntent().getStringExtra("QuestionId");
-//        Question question = sessionManager.getQuestion(questionId);
+        final String questionId = getIntent().getStringExtra("QuestionId");
+        Question question = sessionManager.getQuestionById(questionId);
 
         // Question text
-        // TODO
-        String bla = "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
-        String questionText = bla; // question.getQuestionText();
+        String questionText = question.getQuestionText();
         singleQuestionText.setText(questionText);
 
         // Positive and negative
         String negativeAnswerId = question.getNegativeSystemAnswerId();
-        // TODO
+        AbstractAnswer abstractAnswer = sessionManager.getAnswerById(negativeAnswerId);
         ExpandableTextView expTv1 = (ExpandableTextView) findViewById(R.id.expand_text_view_negative);
-        String negativeAnswer = bla;
-        expTv1.setText(negativeAnswer);
+        expTv1.setText(abstractAnswer.getAnswerText());
 
         String positiveAnswerId = question.getPositiveSystemAnswerId();
-        // TODO
+        abstractAnswer = sessionManager.getAnswerById(positiveAnswerId);
         ExpandableTextView expTv2 = (ExpandableTextView) findViewById(R.id.expand_text_view_positive);
-        String positiveAnswer = bla;
-        expTv2.setText(positiveAnswer);
+        expTv2.setText(abstractAnswer.getAnswerText());
 
         // Try it
         Button tryItButton = (Button) findViewById(R.id.singleQuestionTry);
@@ -65,17 +62,18 @@ public class SingleQuestionActivity extends BaseDrawerActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), VideoRecordingActivity.class);
+                i.putExtra("QuestionId", questionId);
                 startActivity(i);
             }
         });
 
         // Others
-        // TODO
         Button othersButton = (Button) findViewById(R.id.singleQuestionOthers);
         othersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), CrowdAnswersActivity.class);
+                i.putExtra("QuestionId", questionId);
                 startActivity(i);
             }
         });
