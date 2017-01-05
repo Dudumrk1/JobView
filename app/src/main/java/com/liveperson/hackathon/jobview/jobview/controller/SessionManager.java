@@ -141,8 +141,14 @@ public  class SessionManager {
         SystemAnswer Q5answer2 = new SystemAnswer("השתדל להימנע מלבטא ביקורת גלויה על אופן התנהלות העבודה בבנק, התמקד בדברים החיוביים בעבודה בבית השקעות.\"",null);
         Question question5 = new Question ("מדוע אתה מעדיף עבודה בבית השקעות ולא בבנק ?",Q5answer1.getAnswerId(),
                 Q5answer2.getAnswerId(), null);
-
+        SystemAnswer Q6answer1 = new SystemAnswer("זו שאלה שבודקת כמה עניין אתה מוצא בתחום הפיננסים. ענה בכנות והדגש את התחומים שמעניינים אותך במיוחד כדי להמשיך ולפתח בשיחה נושאים אלה.", null);
+        SystemAnswer Q6answer2 = new SystemAnswer("אל תגזים בתשובתך! אם אתה קורא בקביעות עיתונים אלה - הדגש זאת, במידה ולא תתייחס לכך שבדברים הקשורים בתחום עבודתך חשוב לך להתעדכן.\"",null);
+        Question question6 = new Question ("האם אתה קורא את עיתוני הכלכלה באופן קבוע ? כל כמה זמן אתה מתעדכן ?",Q6answer1.getAnswerId(),
+                Q6answer2.getAnswerId(), null);
+        financeQuestionsList.add(question5.getQuestionId());
+        financeQuestionsList.add(question6.getQuestionId());
         domainToQuestionIds.put("פיננסים", financeQuestionsList);
+
         questionIdToQuestionData.put(question1.getQuestionId(),question1);
         questionIdToQuestionData.put(question2.getQuestionId(),question2);
         questionIdToQuestionData.put(question3.getQuestionId(),question3);
@@ -206,9 +212,7 @@ public  class SessionManager {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    System.out.println("ffff ");
                     Map<String, Object> questionsMap = (HashMap<String, Object>) dataSnapshot.getValue();
-                    System.out.println("questionsMap " +questionsMap);
 // if need to update the UI this is the place..
 
 
