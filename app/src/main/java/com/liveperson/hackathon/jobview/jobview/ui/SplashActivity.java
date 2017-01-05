@@ -29,6 +29,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final String TAG = "SplashActivity";
 
     private static final int RC_SIGN_IN = 12345;
+    private static final String IS_FIRST_LOGIN = "is_first_login";
 
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 2000;
@@ -52,10 +53,8 @@ public class SplashActivity extends AppCompatActivity {
                             .createSignInIntentBuilder()
                             .build(),
                     RC_SIGN_IN);
+            finish();
         } else {
-
-
-
 
             new Handler().postDelayed(new Runnable() {
                 @Override
