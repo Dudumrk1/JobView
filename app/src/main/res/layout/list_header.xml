@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:paddingLeft="15dp"
+        android:textDirection="rtl"
         android:paddingRight="15dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"

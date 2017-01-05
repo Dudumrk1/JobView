@@ -15,10 +15,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.liveperson.hackathon.jobview.jobview.R;
+import com.liveperson.hackathon.jobview.jobview.controller.SessionManager;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.ReviewMetric;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class VideoViewActivity extends BaseDrawerActivity {
 
