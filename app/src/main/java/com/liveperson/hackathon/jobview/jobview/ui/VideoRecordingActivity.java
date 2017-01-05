@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -72,10 +75,20 @@ public class VideoRecordingActivity extends BaseDrawerActivity {
     private void dispatchTakeVideoIntent() {
         Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
+            takeVideoIntent.putExtra(MediaStore.EXTRA_OUTPUT, getImageUri());
             startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
         }
 
     }
+
+//    private Uri getImageUri() {
+//        // Store image in dcim
+//        // Here you can change yourinternal storage path to store those images..
+//        File file = new File(Environment.getExternalStorageDirectory() + "/DCIM", CAPTURE_TITLE);
+//        Uri imgUri = Uri.fromFile(file);
+//
+//        return imgUri;
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -101,6 +114,12 @@ public class VideoRecordingActivity extends BaseDrawerActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
                 mProgress.dismiss();
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                System.out.println();
             }
         });
     }
