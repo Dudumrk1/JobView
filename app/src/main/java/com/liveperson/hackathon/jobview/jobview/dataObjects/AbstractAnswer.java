@@ -36,4 +36,5 @@ public abstract class AbstractAnswer {
     public void setAnswerText(String answerText) {
         this.answerText = answerText;
     }
+
 }

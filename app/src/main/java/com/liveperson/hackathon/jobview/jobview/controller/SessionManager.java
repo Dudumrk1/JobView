@@ -6,7 +6,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.SystemAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,15 +24,18 @@ public  class SessionManager {
     private static SessionManager instance = new SessionManager();
     private static final String SCHEMA_NAME = "jobView";
     private static final String USERS_TABLE_NAME = "users";
+    private static final String QUESTIONS_TABLE_NAME = "questions";
 
     private User mUser;
-
+    private HashMap <String,ArrayList<String>> domainToQuestionIds = new HashMap<>();
+    private HashMap <String,Question> questionIdToQuestionData = new HashMap<>();
 
     FirebaseDatabase database;
     private SessionManager()
     {
         database = FirebaseDatabase.getInstance();
         database.setPersistenceEnabled(true);
+        createPredefinedQuestionsList();
 
     }
 
@@ -85,6 +92,63 @@ public  class SessionManager {
     public void setAnsweredId(String id){
         mUser.setAnsweredQuestions(id);
     }
+
+    private void createPredefinedQuestionsList (){
+        ArrayList<String> questionsList = new ArrayList<>();
+
+        SystemAnswer Q1answer1 = new SystemAnswer("התמקד בדברים החיוביים שהספקת לעשות בתקופה זו: הקדשת זמן למשפחה, חברים, תחביבים והרחבת הידע בתחומים שמעניינים אותך.", null);
+        SystemAnswer Q1answer2 = new SystemAnswer("השתדל לא להישמע כאילו היית חסר מעש וללא אנרגיות. הימנע מלהזכיר תחושות דכאון או קושי שלא הצלחת להתגבר עליו.\"",null);
+        Question question1 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q1answer1.getAnswerId(),
+                Q1answer2.getAnswerId(), null);
+
+        SystemAnswer Q2answer1 = new SystemAnswer("תכנן את תשובתך באופן שאפשר יהיה לראות בחולשה שלך תכונה חיובית (דהיינו, אל תאמר: \"אני לא אוהב פיקוח-יתר כי אני שופע יזמה\". \"אני אוהב לצפות מראש בעיות, לפני שהן מתעוררות\\", null);
+        SystemAnswer Q2answer2 = new SystemAnswer("אל תספק רשימה גדולה של חולשות - הסתפק באחת. מצד שני הימנע מלהגיד שאין לך חולשות.",null);
+        Question question2 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q2answer1.getAnswerId(),
+                Q2answer2.getAnswerId(), null);
+
+        SystemAnswer Q3answer1 = new SystemAnswer("ענה לשאלה זו באמצעות תגובה קצרה כגון, \"האתגר\", \"הזדמנויות הקידום\", \"תחומי האחריות המגוונים\", וכו'. אם תרצה לפרט, תינתן לך הזדמנות לעשות זאת", null);
+        SystemAnswer Q3answer2 = new SystemAnswer("הימנע מלענות תשובה שמעידה על חוסר איכפתיות או איזכורים של משכורת והטבות.",null);
+        Question question3 = new Question ("מה קרה כשמצאת עצמך ללא עבודה ?",Q3answer1.getAnswerId(),
+                Q3answer2.getAnswerId(), null);
+
+        questionsList.add(question1.getQuestionId());
+        questionsList.add(question2.getQuestionId());
+        questionsList.add(question3.getQuestionId());
+        domainToQuestionIds.put("HR", questionsList);
+        questionIdToQuestionData.put(question1.getQuestionId(),question1);
+        questionIdToQuestionData.put(question2.getQuestionId(),question2);
+        questionIdToQuestionData.put(question3.getQuestionId(),question3);
+
+
+    }
+
+    public Question getQuestionById (String questionId) {
+        Question questionData = questionIdToQuestionData.get(questionId);
+       if (questionData != null){
+           return questionData;
+       }
+        else{
+           //TODO - go to DB
+           return null;
+       }
+    }
+
+    public ArrayList<Question> fetchQuestions() {
+        ArrayList<String> questionIds = new ArrayList<>();
+        ArrayList<Question> questions = new ArrayList<>();
+        String domainName = mUser.getOccupationalDomains().getDomainName();
+        //retrieve HR domain questions
+        questionIds.addAll(domainToQuestionIds.get("HR"));
+        //retrieve user's domain questions
+        questionIds.addAll(domainToQuestionIds.get(domainName));
+        for(String questionId : questionIds){
+            questions.add(questionIdToQuestionData.get(questionId));
+        }
+        return questions;
+
+    }
+
+
 
 
 }
