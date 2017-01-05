@@ -38,7 +38,7 @@ public  class SessionManager {
     private HashMap <String,Question> questionIdToQuestionData = new HashMap<>();
     private HashMap <String,AbstractAnswer> answerIdsToAnswerData = new HashMap<>();
     private ArrayList <ReviewMetric> reviewMetricList= new ArrayList<>();
-    private HashMap <String,ReviewMetricScore> reviewMetricIdToMetricScoreId = new HashMap<>();
+    private HashMap <String,ArrayList<ReviewMetricScore>> answerIdToMetricReviewScore = new HashMap<>();
 
     FirebaseDatabase database;
     private SessionManager()
@@ -265,6 +265,27 @@ public  class SessionManager {
     public ArrayList<ReviewMetric> getAllReviewMetrics(){
       return reviewMetricList;
     }
+
+    public void addMetricReviewScore(String answerId, String metricId, int score) {
+        ArrayList<ReviewMetricScore> metricScoreList = answerIdToMetricReviewScore.get(answerId);
+        ReviewMetricScore reviewMetricScore;
+        if (metricScoreList == null) {
+            reviewMetricScore = new ReviewMetricScore(metricId, score);
+            metricScoreList = new ArrayList<>();
+            metricScoreList.add(reviewMetricScore);
+            answerIdToMetricReviewScore.put(answerId, metricScoreList);
+
+        } else {
+            reviewMetricScore = new ReviewMetricScore(metricId, score);
+            metricScoreList.add(reviewMetricScore);
+        }
+
+        AbstractAnswer answerData = answerIdsToAnswerData.get(answerId);
+        if (answerData != null && answerData instanceof UserAnswer) {
+            ((UserAnswer) answerData).addReviewId(reviewMetricScore.getId());
+        }
+    }
+
 
 
 }

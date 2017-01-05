@@ -17,4 +17,8 @@ public class UserAnswer extends AbstractAnswer {
         this.uriFile = uriFile;
         this.answerReviewsIds = answerReviewsIds;
     }
+
+    public void addReviewId(String reviewId){
+        answerReviewsIds.add(reviewId);
+    }
 }

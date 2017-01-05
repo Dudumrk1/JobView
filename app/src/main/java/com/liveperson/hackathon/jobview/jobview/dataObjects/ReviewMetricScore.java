@@ -7,12 +7,16 @@ import java.util.UUID;
  */
 
 public class ReviewMetricScore {
+    private String id;
     private String metricId;
     private int reviewMetricScore;
     private String reviewMetricText;
 
-    public ReviewMetricScore() {
-        metricId = UUID.randomUUID().toString();
+    public ReviewMetricScore(String metricId, int score) {
+        id = UUID.randomUUID().toString();
+        this.metricId = metricId;
+        reviewMetricScore = score;
+
     }
 
     public String getMetricId() {
@@ -37,5 +41,9 @@ public class ReviewMetricScore {
 
     public void setReviewMetricText(String reviewMetricText) {
         this.reviewMetricText = reviewMetricText;
+    }
+
+    public String getId(){
+        return id;
     }
 }
