@@ -1,15 +1,19 @@
 package com.liveperson.hackathon.jobview.jobview.controller;
 
+import android.net.Uri;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import com.liveperson.hackathon.jobview.jobview.dataObjects.AbstractAnswer;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.AnsweredQuestion;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.SystemAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.UserAnswer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -95,9 +99,7 @@ public  class SessionManager {
         // DB update
     }
 
-    public void setAnsweredId(String id){
-        mUser.addAnsweredQuestions(id);
-    }
+
 
     private void createPredefinedQuestionsList (){
         ArrayList<String> questionsList = new ArrayList<>();
@@ -130,6 +132,9 @@ public  class SessionManager {
         answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer2);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer1);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer2);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question1.getQuestionId()).setValue(question1);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question2.getQuestionId()).setValue(question2);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question3.getQuestionId()).setValue(question3);
 
       //  storeQuestionsInDB();
     }
@@ -166,18 +171,13 @@ public  class SessionManager {
         }
 
 
-    /*    database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).addListenerForSingleValueEvent(new ValueEventListener() {
+       database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
+                    System.out.println("ffff ");
                     Map<String, Object> questionsMap = (HashMap<String, Object>) dataSnapshot.getValue();
-                    String userId = (String) userMap.get("userId");
-                    String email = (String) userMap.get("mEmail");
-                    String name = (String) userMap.get("mName");
-                    User user = new User();
-                    user.setUserId(userId);
-                    user.setmEmail(email);
-                    user.setmName(name);
+                    System.out.println("questionsMap " +questionsMap);
 // if need to update the UI this is the place..
 
 
@@ -191,8 +191,28 @@ public  class SessionManager {
 
             }
         });
-        */
+
         return questions;
+
+    }
+
+    public ArrayList<Question> fetchGeneralQuestions(){
+        ArrayList<String> questionIds = new ArrayList<>();
+        ArrayList<Question> questions = new ArrayList<>();
+
+        questionIds.addAll(domainToQuestionIds.get("HR"));
+        for(String questionId : questionIds){
+            questions.add(questionIdToQuestionData.get(questionId));
+        }
+        return questions;
+
+    }
+
+
+    public void updateUserAnswer(String questionId, Uri fileUri){
+        UserAnswer userAnswer = new UserAnswer(null,fileUri);
+        AnsweredQuestion answeredQuestion = new AnsweredQuestion(questionId, userAnswer.getAnswerId());
+        mUser.addAnsweredQuestions(answeredQuestion.getId());
 
     }
 
