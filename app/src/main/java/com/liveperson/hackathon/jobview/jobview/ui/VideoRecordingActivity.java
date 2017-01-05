@@ -75,7 +75,7 @@ public class VideoRecordingActivity extends BaseDrawerActivity {
     private void dispatchTakeVideoIntent() {
         Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
-            takeVideoIntent.putExtra(MediaStore.EXTRA_OUTPUT, getImageUri());
+//            takeVideoIntent.putExtra(MediaStore.EXTRA_OUTPUT, getImageUri());
             startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
         }
 
