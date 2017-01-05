@@ -11,6 +11,8 @@ import com.liveperson.hackathon.jobview.jobview.dataObjects.AbstractAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.AnsweredQuestion;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.OccupationalDomain;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.ReviewMetric;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.ReviewMetricScore;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.SystemAnswer;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.User;
 import com.liveperson.hackathon.jobview.jobview.dataObjects.UserAnswer;
@@ -35,6 +37,8 @@ public  class SessionManager {
     private HashMap <String,ArrayList<String>> domainToQuestionIds = new HashMap<>();
     private HashMap <String,Question> questionIdToQuestionData = new HashMap<>();
     private HashMap <String,AbstractAnswer> answerIdsToAnswerData = new HashMap<>();
+    private ArrayList <ReviewMetric> reviewMetricList= new ArrayList<>();
+    private HashMap <String,ReviewMetricScore> reviewMetricIdToMetricScoreId = new HashMap<>();
 
     FirebaseDatabase database;
     private SessionManager()
@@ -42,6 +46,7 @@ public  class SessionManager {
         database = FirebaseDatabase.getInstance();
         database.setPersistenceEnabled(true);
         createPredefinedQuestionsList();
+        createPredefinedReviewMetrics();
 
     }
 
@@ -241,6 +246,24 @@ public  class SessionManager {
         mUser.addAnsweredQuestions(answeredQuestion.getId());
         answerIdsToAnswerData.put(userAnswer.getAnswerId(),userAnswer);
 
+    }
+
+    public void createPredefinedReviewMetrics(){
+
+        ReviewMetric reviewMetric1 = new ReviewMetric("שפת גוף");
+        ReviewMetric reviewMetric2 = new ReviewMetric("טון הדיבור");
+        ReviewMetric reviewMetric3 = new ReviewMetric("מהירות הדיבור");
+        ReviewMetric reviewMetric4 = new ReviewMetric("מראה כללי");
+        reviewMetricList.add(reviewMetric1);
+        reviewMetricList.add(reviewMetric2);
+        reviewMetricList.add(reviewMetric3);
+        reviewMetricList.add(reviewMetric4);
+
+
+    }
+
+    public ArrayList<ReviewMetric> getAllReviewMetrics(){
+      return reviewMetricList;
     }
 
 
