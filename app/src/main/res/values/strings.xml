@@ -49,6 +49,7 @@
         <item>מה היו ההישגים הכי משמעותיים שלך במקומות העבודה האחרונים ?</item>
         <item>תני דוגמה לאדם שאתה מעריך במיוחד, אילו תכונות אתה מעריך או מוקיר בו ?</item>
     </string-array>
+    <string name="title_activity_video_view_screen">VideoViewScreenActivity</string>
 
 
 </resources>

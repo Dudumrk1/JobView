@@ -64,9 +64,8 @@ public class SingleQuestionActivity extends BaseDrawerActivity {
         tryItButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
-//                Intent i = new Intent(getApplicationContext(), VideoRecordingActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(getApplicationContext(), VideoRecordingActivity.class);
+                startActivity(i);
             }
         });
 
