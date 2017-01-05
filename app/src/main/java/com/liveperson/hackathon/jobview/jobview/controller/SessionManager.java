@@ -128,21 +128,25 @@ public  class SessionManager {
         questionsList.add(question1.getQuestionId());
         questionsList.add(question2.getQuestionId());
         questionsList.add(question3.getQuestionId());
+        questionsList.add(question4.getQuestionId());
         domainToQuestionIds.put("HR", questionsList);
         questionIdToQuestionData.put(question1.getQuestionId(),question1);
         questionIdToQuestionData.put(question2.getQuestionId(),question2);
         questionIdToQuestionData.put(question3.getQuestionId(),question3);
+        questionIdToQuestionData.put(question4.getQuestionId(),question4);
         answerIdsToAnswerData.put(Q1answer1.getAnswerId(), Q1answer1);
         answerIdsToAnswerData.put(Q1answer2.getAnswerId(), Q1answer2);
         answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer1);
-        answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer2);
+        answerIdsToAnswerData.put(Q2answer2.getAnswerId(), Q2answer2);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer1);
-        answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer2);
+        answerIdsToAnswerData.put(Q3answer2.getAnswerId(), Q3answer2);
+        answerIdsToAnswerData.put(Q4answer1.getAnswerId(), Q4answer1);
+        answerIdsToAnswerData.put(Q4answer2.getAnswerId(), Q4answer2);
         database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question1.getQuestionId()).setValue(question1);
         database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question2.getQuestionId()).setValue(question2);
         database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question3.getQuestionId()).setValue(question3);
+        database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).child(question4.getQuestionId()).setValue(question4);
 
-      //  storeQuestionsInDB();
     }
 
     public Question getQuestionById (String questionId) {
