@@ -9,8 +9,8 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_guidance">GuidanceActivity</string>
     <string name="title_activity_training">TrainingActivity</string>
+    <string name="title_activity_guidance">עקרונות מנחים לראיון</string>
 
     <string-array name="OccupationalDomain">
         <item>תוכנה</item>
@@ -39,6 +39,7 @@
         <item>הכן מראש כמה שאלות</item>
         <item>חשוב על דברי הסיום שלך. הם יחתמו את הראיון ויותירו רושם רב אצל המראיין</item>
     </string-array>
+    <string name="title_activity_single_question">אימון ממוקד</string>
     <string-array name="domainQuestionsHR">
         <item>ספר/י לי על עצמך</item>
         <item>מה היה תפקידך האחרון ?</item>

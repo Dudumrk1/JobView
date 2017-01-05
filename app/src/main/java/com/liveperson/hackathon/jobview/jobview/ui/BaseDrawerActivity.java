@@ -15,6 +15,10 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.liveperson.hackathon.jobview.jobview.R;
+import com.liveperson.hackathon.jobview.jobview.dataObjects.Question;
+
+import java.util.List;
+import java.util.UUID;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +30,9 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
     View mRootView;
 
     public DrawerLayout drawer;
+
+    // TODO remove
+    final static Question question = new Question();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,11 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         toggle.syncState();
 
 
+//        question =
+//        question.setPositiveSystemAnswer();
+//        question.setNegativeSystemAnswer();
+        question.setQuestionText("I am a question");
+//        question.setUserAnswerIdsList();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -99,7 +111,9 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_perosnal_dashboard) {
 
         } else if (id == R.id.nav_about) {
-
+            Intent i = new Intent(getApplicationContext(), SingleQuestionActivity.class);
+            i.putExtra("QuestionId", question.getQuestionId().toString());
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
