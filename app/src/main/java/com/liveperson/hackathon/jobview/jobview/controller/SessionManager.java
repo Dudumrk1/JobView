@@ -86,9 +86,13 @@ public  class SessionManager {
         return mUser;
     }
 
+    public String getUserDomain(){
+        return mUser.getOccupationalDomains().getDomainName();
+    }
+
     public void setUserDomain(String domain){
         mUser.setOccupationalDomains(new OccupationalDomain(domain));
-        //TODO - add method to fetch qId + DB update
+        // DB update
     }
 
     public void setAnsweredId(String id){
@@ -126,6 +130,8 @@ public  class SessionManager {
         answerIdsToAnswerData.put(Q2answer1.getAnswerId(), Q2answer2);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer1);
         answerIdsToAnswerData.put(Q3answer1.getAnswerId(), Q3answer2);
+
+      //  storeQuestionsInDB();
     }
 
     public Question getQuestionById (String questionId) {
@@ -150,17 +156,42 @@ public  class SessionManager {
         }
     }
 
-    public ArrayList<Question> fetchQuestions() {
+    public ArrayList<Question> fetchQuestionsByDomain(String domainName) {
         ArrayList<String> questionIds = new ArrayList<>();
         ArrayList<Question> questions = new ArrayList<>();
-        String domainName = mUser.getOccupationalDomains().getDomainName();
-        //retrieve HR domain questions
-        questionIds.addAll(domainToQuestionIds.get("HR"));
-        //retrieve user's domain questions
+
         questionIds.addAll(domainToQuestionIds.get(domainName));
         for(String questionId : questionIds){
             questions.add(questionIdToQuestionData.get(questionId));
         }
+
+
+    /*    database.getReference(SCHEMA_NAME).child(QUESTIONS_TABLE_NAME).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Map<String, Object> questionsMap = (HashMap<String, Object>) dataSnapshot.getValue();
+                    String userId = (String) userMap.get("userId");
+                    String email = (String) userMap.get("mEmail");
+                    String name = (String) userMap.get("mName");
+                    User user = new User();
+                    user.setUserId(userId);
+                    user.setmEmail(email);
+                    user.setmName(name);
+// if need to update the UI this is the place..
+
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError firebaseError) {
+
+            }
+        });
+        */
         return questions;
 
     }
